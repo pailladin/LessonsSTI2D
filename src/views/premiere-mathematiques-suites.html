@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapitre - Suites arithmetiques et geometriques</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Chapitre Maths - Suites</h1>
+      <p>1re STI2D : suites arithmetiques, suites geometriques et representations graphiques</p>
+      <nav>
+        <a href="/">Accueil</a>
+        <a href="/programme/premiere">Programme 1re</a>
+        <a href="/programme/premiere/mathematiques">Mathematiques</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>0) Vocabulaire et notations</h2>
+      <ul>
+        <li>Une suite est une liste de nombres notes <strong>(u_n)</strong>, indexes par <strong>n</strong>.</li>
+        <li>En 1re, on utilise souvent <strong>n dans N</strong> et on part de <strong>u_0</strong>.</li>
+        <li>Le point de representation est le point de coordonnees <strong>(n ; u_n)</strong>.</li>
+      </ul>
+      <div class="example">
+        <strong>Attention :</strong> on ne relie pas les points avec une courbe continue, car n ne prend que des valeurs entieres.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>1) Suites arithmetiques</h2>
+      <p>Une suite est arithmetique si chaque terme s'obtient en ajoutant une constante <strong>r</strong> au terme precedent.</p>
+      <ul>
+        <li>Relation de recurrence : <strong>u(n+1) = u(n) + r</strong>.</li>
+        <li>Expression explicite : <strong>u(n) = u(0) + n * r</strong>.</li>
+        <li>Formule entre deux rangs : <strong>u(n) = u(p) + (n - p) * r</strong>.</li>
+        <li>Caracterisation : <strong>u(n+1) - u(n) = r</strong> (difference constante).</li>
+      </ul>
+      <div class="example"><strong>Exemple :</strong> u(0)=4 et r=3 donne 4, 7, 10, 13, ...</div>
+    </section>
+
+    <section class="card">
+      <h2>2) Sens de variation d'une suite arithmetique</h2>
+      <ul>
+        <li>Si <strong>r &gt; 0</strong>, la suite est strictement croissante.</li>
+        <li>Si <strong>r &lt; 0</strong>, la suite est strictement decroissante.</li>
+        <li>Si <strong>r = 0</strong>, la suite est constante.</li>
+      </ul>
+      <p>La variation depend uniquement du signe de la raison <strong>r</strong>.</p>
+    </section>
+
+    <section class="card">
+      <h2>3) Suites geometriques</h2>
+      <p>Une suite est geometrique si chaque terme s'obtient en multipliant le terme precedent par une constante <strong>q</strong>.</p>
+      <ul>
+        <li>Relation de recurrence : <strong>u(n+1) = u(n) * q</strong>.</li>
+        <li>Expression explicite : <strong>u(n) = u(0) * q^n</strong>.</li>
+        <li>Formule entre deux rangs : <strong>u(n) = u(p) * q^(n - p)</strong>.</li>
+        <li>Caracterisation (si u(n) != 0) : <strong>u(n+1) / u(n) = q</strong> (quotient constant).</li>
+      </ul>
+      <div class="example"><strong>Exemple :</strong> u(0)=5 et q=2 donne 5, 10, 20, 40, ...</div>
+    </section>
+
+    <section class="card">
+      <h2>4) Sens de variation d'une suite geometrique</h2>
+      <p>Le sens de variation depend de <strong>q</strong> et du signe des termes.</p>
+      <ul>
+        <li>Si <strong>u0 &gt; 0</strong> et <strong>q &gt; 1</strong> : suite strictement croissante.</li>
+        <li>Si <strong>u0 &gt; 0</strong> et <strong>0 &lt; q &lt; 1</strong> : suite strictement decroissante.</li>
+        <li>Si <strong>q = 1</strong> : suite constante.</li>
+        <li>Si <strong>q &lt; 0</strong> : les signes alternent, la suite n'est en general ni croissante ni decroissante.</li>
+      </ul>
+      <div class="example"><strong>Exemple :</strong> u0=16 et q=1/2 donne 16, 8, 4, 2, ... (decroissance).</div>
+    </section>
+
+    <section class="card">
+      <h2>5) Representations graphiques</h2>
+      <p>On represente une suite par un nuage de points de coordonnees <strong>(n ; u_n)</strong>.</p>
+      <h3>A. Cas arithmetique</h3>
+      <ul>
+        <li>Les points sont alignes.</li>
+        <li>La pente de la droite est la raison <strong>r</strong>.</li>
+        <li>Entre deux rangs consecutifs : <strong>r = u(n+1) - u(n)</strong>.</li>
+      </ul>
+      <h3>B. Cas geometrique</h3>
+      <ul>
+        <li>Les points ne sont pas alignes (sauf cas particulier).</li>
+        <li>On observe une evolution de type exponentiel (croissance ou decroissance).</li>
+        <li>Si q est negatif, les points alternent au-dessus et au-dessous de l'axe horizontal.</li>
+      </ul>
+      <div class="example">
+        <strong>Point de logique :</strong> "suite arithmetique" et "points alignes" sont equivalents (condition necessaire et suffisante).
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>6) Methode type bac / devoir</h2>
+      <ol>
+        <li>Identifier le type (difference constante ou quotient constant).</li>
+        <li>Trouver les parametres (u0 et r, ou u0 et q).</li>
+        <li>Donner la forme demandee (recurrence ou terme general).</li>
+        <li>Calculer un terme et verifier la coherence du signe/variation.</li>
+        <li>Interpreter graphiquement avec les points (n ; u_n).</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Exercices corriges</h2>
+
+      <h3>Exercice 1 - Identifier la nature</h3>
+      <p>Suite A : 2, 5, 8, 11, ... Quelle est sa nature ?</p>
+      <button class="toggle-answer" data-target="corr-s1">Afficher la correction</button>
+      <div id="corr-s1" class="answer hidden">Suite arithmetique de raison r = 3 car u(n+1)-u(n)=3.</div>
+
+      <h3>Exercice 2 - Terme general</h3>
+      <p>On a u(0)=7 et r=-2. Donner u(n).</p>
+      <button class="toggle-answer" data-target="corr-s2">Afficher la correction</button>
+      <div id="corr-s2" class="answer hidden">u(n) = 7 - 2n.</div>
+
+      <h3>Exercice 3 - Suite geometrique</h3>
+      <p>On a u(0)=3 et q=1,5. Calculer u(2).</p>
+      <button class="toggle-answer" data-target="corr-s3">Afficher la correction</button>
+      <div id="corr-s3" class="answer hidden">u(2) = 3 * 1,5^2 = 6,75.</div>
+
+      <h3>Exercice 4 - Retrouver la raison</h3>
+      <p>Suite arithmetique telle que u(3)=11 et u(8)=31. Determiner r puis u(0).</p>
+      <button class="toggle-answer" data-target="corr-s4">Afficher la correction</button>
+      <div id="corr-s4" class="answer hidden">
+        u(8)-u(3)=5r donc 31-11=20=5r d'ou r=4. Puis u(3)=u(0)+3r donc 11=u(0)+12, ainsi u(0)=-1.
+      </div>
+
+      <h3>Exercice 5 - Lecture graphique logique</h3>
+      <p>Un nuage de points (n ; u_n) est aligne. Que peut-on conclure sur la suite ?</p>
+      <button class="toggle-answer" data-target="corr-s5">Afficher la correction</button>
+      <div id="corr-s5" class="answer hidden">
+        La suite est arithmetique. L'alignement est une condition necessaire et suffisante dans ce contexte.
+      </div>
+
+      <h3>Exercice 6 - Etudier le sens de variation</h3>
+      <p>Dans chacun des cas, etudier le sens de variation de la suite :</p>
+      <ul>
+        <li><strong>a)</strong> u0 = 6 et u(n+1) = u(n) - 4</li>
+        <li><strong>b)</strong> u(n) = 3n^2 - 4</li>
+      </ul>
+      <button class="toggle-answer" data-target="corr-s6">Afficher la correction</button>
+      <div id="corr-s6" class="answer hidden">
+        a) On a u(n+1)-u(n) = -4, constant negatif. La suite est arithmetique de raison r=-4 donc strictement decroissante.<br />
+        b) u(n+1)-u(n) = [3(n+1)^2-4] - [3n^2-4] = 6n+3. Pour tout n naturel, 6n+3 &gt; 0 donc la suite est strictement croissante.
+      </div>
+
+      <div class="interactive">
+        <h3>Exercices interactifs (verification rapide)</h3>
+        <p><strong>Q1.</strong> Suite arithmetique: u(0)=10, r=4. Quelle est la valeur de u(3) ?</p>
+        <input id="sq1" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('sq1', 22, 'sfb1')">Verifier</button>
+        <div id="sfb1" class="feedback"></div>
+
+        <p><strong>Q2.</strong> Suite geometrique: u(0)=2, q=3. Quelle est la valeur de u(2) ?</p>
+        <input id="sq2" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('sq2', 18, 'sfb2')">Verifier</button>
+        <div id="sfb2" class="feedback"></div>
+
+        <p><strong>Q3.</strong> Suite arithmetique: u(5)=9 et r=-2. Quelle est la valeur de u(6) ?</p>
+        <input id="sq3" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('sq3', 7, 'sfb3')">Verifier</button>
+        <div id="sfb3" class="feedback"></div>
+
+        <p><strong>Q4.</strong> Suite geometrique: u(1)=12 et q=0,5. Quelle est la valeur de u(2) ?</p>
+        <input id="sq4" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('sq4', 6, 'sfb4')">Verifier</button>
+        <div id="sfb4" class="feedback"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>LessonsSTI2D - Chapitre Suites 1re STI2D</footer>
+
+  <script>
+    document.querySelectorAll('.toggle-answer[data-target]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var targetId = btn.getAttribute('data-target');
+        var block = document.getElementById(targetId);
+        var isHidden = block.classList.contains('hidden');
+        block.classList.toggle('hidden');
+        btn.textContent = isHidden ? 'Masquer la correction' : 'Afficher la correction';
+      });
+    });
+
+    function checkNumeric(inputId, expectedValue, feedbackId) {
+      var raw = document.getElementById(inputId).value.trim().replace(',', '.');
+      var user = Number(raw);
+      var feedback = document.getElementById(feedbackId);
+
+      if (raw === '' || Number.isNaN(user)) {
+        feedback.textContent = 'Entre un nombre valide.';
+        feedback.className = 'feedback ko';
+        return;
+      }
+
+      if (Math.abs(user - expectedValue) < 0.0001) {
+        feedback.textContent = 'Correct.';
+        feedback.className = 'feedback ok';
+      } else {
+        feedback.textContent = 'Incorrect. Essaie encore.';
+        feedback.className = 'feedback ko';
+      }
+    }
+  </script>
+</body>
+</html>

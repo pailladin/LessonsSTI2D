@@ -159,3 +159,125 @@ footer {
   background: #fff8e6;
   border-radius: 8px;
 }
+
+.subject-page {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.subject-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #f8fcff 0%, #ecf6ff 55%, #eaf4ef 100%);
+}
+
+.subject-hero::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: -70px;
+  top: -90px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(10, 147, 150, 0.2) 0%, rgba(10, 147, 150, 0) 70%);
+}
+
+.subject-hero h2 {
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.2;
+}
+
+.subject-lead {
+  margin: 0.7rem 0 1rem;
+  max-width: 65ch;
+  color: #314356;
+}
+
+.subject-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.32rem 0.62rem;
+  border-radius: 999px;
+  border: 1px solid #c9dae8;
+  background: #fff;
+  color: #1d3557;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.subject-section-title {
+  margin: 0 0 0.7rem;
+  font-size: 1.15rem;
+}
+
+.subject-topics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.9rem;
+}
+
+.topic-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.topic-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.topic-head h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.topic-level {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #22577a;
+  background: #e5f3ff;
+  border: 1px solid #b8dbf7;
+  border-radius: 999px;
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+}
+
+.topic-card p {
+  margin: 0;
+  color: #3b4f63;
+}
+
+.topic-card .btn {
+  margin-top: auto;
+}
+
+.subject-checklist {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.subject-checklist li::marker {
+  color: var(--secondary);
+}
+
+@media (max-width: 700px) {
+  .topic-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
