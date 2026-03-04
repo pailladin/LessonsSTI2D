@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapitre - Fonctions affine, quadratique et exponentielle</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Chapitre Maths - Fonctions</h1>
+      <p>1re STI2D : fonctions affine, quadratique et exponentielle</p>
+      <nav>
+        <a href="/">Accueil</a>
+        <a href="/programme/premiere">Programme 1re</a>
+        <a href="/programme/premiere/mathematiques">Mathematiques</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Cours - 1) Fonction affine</h2>
+      <p>Une fonction affine s'ecrit <strong>f(x) = ax + b</strong>.</p>
+      <ul>
+        <li><strong>a</strong> : coefficient directeur (pente de la droite).</li>
+        <li><strong>b</strong> : ordonnee a l'origine (valeur de f(0)).</li>
+      </ul>
+      <p>Si <strong>a &gt; 0</strong>, la fonction est croissante. Si <strong>a &lt; 0</strong>, elle est decroissante.</p>
+      <div class="example"><strong>Exemple :</strong> pour f(x)=2x+3, on a f(0)=3 et f(5)=13.</div>
+    </section>
+
+    <section class="card">
+      <h2>Cours - 2) Fonction quadratique</h2>
+      <p>Une fonction quadratique s'ecrit <strong>f(x) = ax^2 + bx + c</strong> avec <strong>a != 0</strong>.</p>
+      <ul>
+        <li>Sa courbe est une parabole.</li>
+        <li>Sommet : point extremum (minimum si a &gt; 0, maximum si a &lt; 0).</li>
+        <li>Axe de symetrie : <strong>x = -b / (2a)</strong>.</li>
+      </ul>
+      <p>Forme canonique utile : <strong>f(x) = a(x - alpha)^2 + beta</strong>.</p>
+      <div class="example"><strong>Exemple :</strong> g(x)=x^2-4x+1 a pour axe x=2 et sommet (2 ; -3).</div>
+    </section>
+
+    <section class="card">
+      <h2>Cours - 3) Fonction exponentielle</h2>
+      <p>La fonction exponentielle est <strong>f(x) = e^x</strong>. En pratique STI2D, on rencontre souvent <strong>f(x) = A * e^(kx)</strong>.</p>
+      <ul>
+        <li>Si <strong>k &gt; 0</strong> : croissance exponentielle.</li>
+        <li>Si <strong>k &lt; 0</strong> : decroissance exponentielle.</li>
+        <li>f(x) est toujours positive si A &gt; 0.</li>
+      </ul>
+      <p>Applications : evolution de temperature, charge/decharge, croissance de population, attenuation d'un signal.</p>
+      <div class="example"><strong>Exemple :</strong> h(t)=100e^(-0,1t) donne h(0)=100 puis h(10)≈36,8.</div>
+    </section>
+
+    <section class="card">
+      <h2>Exercices</h2>
+
+      <h3>Exercice 1 - Affine</h3>
+      <p>On considere <strong>f(x) = 3x - 5</strong>.</p>
+      <ol>
+        <li>Donner le coefficient directeur et l'ordonnee a l'origine.</li>
+        <li>Calculer f(4).</li>
+        <li>La fonction est-elle croissante ou decroissante ?</li>
+      </ol>
+      <button class="toggle-answer" data-target="corr-1">Afficher la correction</button>
+      <div id="corr-1" class="answer hidden">
+        a = 3, b = -5, f(4) = 7, fonction croissante.
+      </div>
+
+      <h3>Exercice 2 - Quadratique</h3>
+      <p>Soit <strong>g(x) = x^2 - 4x + 1</strong>.</p>
+      <ol>
+        <li>Identifier a, b et c.</li>
+        <li>Donner l'axe de symetrie.</li>
+        <li>Calculer la valeur de g au sommet.</li>
+      </ol>
+      <button class="toggle-answer" data-target="corr-2">Afficher la correction</button>
+      <div id="corr-2" class="answer hidden">
+        a = 1, b = -4, c = 1, axe x = 2, g(2) = -3 (minimum).
+      </div>
+
+      <h3>Exercice 3 - Exponentielle</h3>
+      <p>On etudie <strong>h(t) = 200 * e^(-0.2t)</strong>.</p>
+      <ol>
+        <li>La grandeur augmente-t-elle ou diminue-t-elle ?</li>
+        <li>Calculer h(0).</li>
+        <li>Donner une interpretation physique possible.</li>
+      </ol>
+      <button class="toggle-answer" data-target="corr-3">Afficher la correction</button>
+      <div id="corr-3" class="answer hidden">
+        Decroissance, h(0) = 200, exemple : decharge d'une batterie ou refroidissement.
+      </div>
+
+      <h3>Exercice 4 - Melange de modeles</h3>
+      <p>Associer chaque situation au bon type de fonction :</p>
+      <ul>
+        <li>A. Cout total = cout fixe + cout proportionnel a la quantite.</li>
+        <li>B. Trajectoire d'un objet lance (hauteur en fonction du temps, sans frottement).</li>
+        <li>C. Perte de 15% d'energie a chaque minute.</li>
+      </ul>
+      <button class="toggle-answer" data-target="corr-4">Afficher la correction</button>
+      <div id="corr-4" class="answer hidden">
+        A affine, B quadratique, C exponentielle.
+      </div>
+
+      <div class="interactive">
+        <h3>Exercices interactifs (reponse numerique)</h3>
+
+        <p><strong>Q1.</strong> Pour f(x) = 2x + 1, quelle est la valeur de f(5) ?</p>
+        <input id="q1" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('q1', 11, 'fb1')">Verifier</button>
+        <div id="fb1" class="feedback"></div>
+
+        <p><strong>Q2.</strong> Pour g(x) = x^2 - 6x + 5, quel est l'axe de symetrie ? (donner x = ?)</p>
+        <input id="q2" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('q2', 3, 'fb2')">Verifier</button>
+        <div id="fb2" class="feedback"></div>
+
+        <p><strong>Q3.</strong> h(t) = 100 * e^(-0.1t). Quelle est la valeur de h(0) ?</p>
+        <input id="q3" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('q3', 100, 'fb3')">Verifier</button>
+        <div id="fb3" class="feedback"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>LessonsSTI2D - Chapitre Fonctions 1re STI2D</footer>
+
+  <script>
+    document.querySelectorAll('.toggle-answer[data-target]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var targetId = btn.getAttribute('data-target');
+        var block = document.getElementById(targetId);
+        var isHidden = block.classList.contains('hidden');
+        block.classList.toggle('hidden');
+        btn.textContent = isHidden ? 'Masquer la correction' : 'Afficher la correction';
+      });
+    });
+
+    function checkNumeric(inputId, expectedValue, feedbackId) {
+      var raw = document.getElementById(inputId).value.trim().replace(',', '.');
+      var user = Number(raw);
+      var feedback = document.getElementById(feedbackId);
+
+      if (raw === '' || Number.isNaN(user)) {
+        feedback.textContent = 'Entre un nombre valide.';
+        feedback.className = 'feedback ko';
+        return;
+      }
+
+      if (Math.abs(user - expectedValue) < 0.0001) {
+        feedback.textContent = 'Correct.';
+        feedback.className = 'feedback ok';
+      } else {
+        feedback.textContent = 'Incorrect. Essaie encore.';
+        feedback.className = 'feedback ko';
+      }
+    }
+  </script>
+</body>
+</html>
+

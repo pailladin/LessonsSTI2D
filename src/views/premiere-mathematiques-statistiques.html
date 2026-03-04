@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapitre - Statistiques et probabilites simples</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Chapitre Maths - Statistiques et Probabilites</h1>
+      <p>1re STI2D : statistiques, probabilites simples</p>
+      <nav>
+        <a href="/">Accueil</a>
+        <a href="/programme/premiere">Programme 1re</a>
+        <a href="/programme/premiere/mathematiques">Mathematiques</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Cours - 1) Statistiques descriptives</h2>
+      <ul>
+        <li>Moyenne : somme des valeurs / effectif total.</li>
+        <li>Mediane : valeur qui partage la serie en deux.</li>
+        <li>Etendue : max - min.</li>
+      </ul>
+      <div class="example"><strong>Exemple :</strong> serie 4, 6, 10 : moyenne = (4+6+10)/3 = 6,67.</div>
+    </section>
+
+    <section class="card">
+      <h2>Cours - 2) Frequences</h2>
+      <p>Frequence d'une modalite = effectif de la modalite / effectif total.</p>
+      <p>La somme des frequences est egale a 1 (ou 100%).</p>
+      <div class="example"><strong>Exemple :</strong> 12 eleves sur 30 : frequence = 12/30 = 0,4 soit 40%.</div>
+    </section>
+
+    <section class="card">
+      <h2>Cours - 3) Probabilites simples</h2>
+      <ul>
+        <li>P(A) = nombre de cas favorables / nombre de cas possibles (equiprobables).</li>
+        <li>0 &lt;= P(A) &lt;= 1.</li>
+        <li>P(non A) = 1 - P(A).</li>
+      </ul>
+      <div class="example"><strong>Exemple :</strong> de a 6 faces, P(obtenir pair)=3/6=0,5.</div>
+    </section>
+
+    <section class="card">
+      <h2>Exercices</h2>
+
+      <h3>Exercice 1</h3>
+      <p>Serie : 8, 10, 12, 10, 15.</p>
+      <ol>
+        <li>Calculer la moyenne.</li>
+        <li>Donner la mediane.</li>
+      </ol>
+      <button class="toggle-answer" data-target="corr-s1">Afficher la correction</button>
+      <div id="corr-s1" class="answer hidden">Moyenne = 11, mediane = 10.</div>
+
+      <h3>Exercice 2</h3>
+      <p>Dans une classe de 30 eleves, 12 font du sport A. Donner la frequence de sport A.</p>
+      <button class="toggle-answer" data-target="corr-s2">Afficher la correction</button>
+      <div id="corr-s2" class="answer hidden">12/30 = 0,4 soit 40%.</div>
+
+      <h3>Exercice 3</h3>
+      <p>On lance un de a 6 faces. Probabilite d'obtenir un nombre pair ?</p>
+      <button class="toggle-answer" data-target="corr-s3">Afficher la correction</button>
+      <div id="corr-s3" class="answer hidden">3 cas favorables (2,4,6) sur 6 : 3/6 = 0,5.</div>
+
+      <div class="interactive">
+        <h3>Exercices interactifs</h3>
+        <p><strong>Q1.</strong> Moyenne de 4, 6, 10 ?</p>
+        <input id="sq1" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('sq1', 6.6667, 'sfb1', 0.01)">Verifier</button>
+        <div id="sfb1" class="feedback"></div>
+
+        <p><strong>Q2.</strong> Frequence de 9 succes sur 20 essais (format decimal) ?</p>
+        <input id="sq2" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('sq2', 0.45, 'sfb2')">Verifier</button>
+        <div id="sfb2" class="feedback"></div>
+
+        <p><strong>Q3.</strong> De a 10 faces : probabilite d'obtenir 1 est ?</p>
+        <input id="sq3" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('sq3', 0.1, 'sfb3')">Verifier</button>
+        <div id="sfb3" class="feedback"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>LessonsSTI2D - Chapitre Statistiques 1re STI2D</footer>
+
+  <script>
+    document.querySelectorAll('.toggle-answer[data-target]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var targetId = btn.getAttribute('data-target');
+        var block = document.getElementById(targetId);
+        var isHidden = block.classList.contains('hidden');
+        block.classList.toggle('hidden');
+        btn.textContent = isHidden ? 'Masquer la correction' : 'Afficher la correction';
+      });
+    });
+
+    function checkNumeric(inputId, expectedValue, feedbackId, tolerance) {
+      var raw = document.getElementById(inputId).value.trim().replace(',', '.');
+      var user = Number(raw);
+      var feedback = document.getElementById(feedbackId);
+      var eps = typeof tolerance === 'number' ? tolerance : 0.0001;
+
+      if (raw === '' || Number.isNaN(user)) {
+        feedback.textContent = 'Entre un nombre valide.';
+        feedback.className = 'feedback ko';
+        return;
+      }
+
+      if (Math.abs(user - expectedValue) <= eps) {
+        feedback.textContent = 'Correct.';
+        feedback.className = 'feedback ok';
+      } else {
+        feedback.textContent = 'Incorrect. Essaie encore.';
+        feedback.className = 'feedback ko';
+      }
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapitre - Resolution de problemes techniques</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Chapitre Maths - Problemes Techniques</h1>
+      <p>1re STI2D : resolution de problemes techniques</p>
+      <nav>
+        <a href="/">Accueil</a>
+        <a href="/programme/premiere">Programme 1re</a>
+        <a href="/programme/premiere/mathematiques">Mathematiques</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Cours - Methode</h2>
+      <ol>
+        <li>Identifier les donnees et les unites.</li>
+        <li>Choisir le modele mathematique adapte.</li>
+        <li>Calculer en gardant les etapes visibles.</li>
+        <li>Verifier la coherence du resultat.</li>
+      </ol>
+      <div class="example"><strong>Exemple :</strong> si C(q)=120+8q et q=10, alors C(10)=120+80=200.</div>
+    </section>
+
+    <section class="card">
+      <h2>Cours - Outils utiles</h2>
+      <ul>
+        <li>Proportionnalite : y = ax.</li>
+        <li>Modele affine : y = ax + b (cout fixe + variable).</li>
+        <li>Modele quadratique : optimisation / trajectoire.</li>
+      </ul>
+      <div class="example"><strong>Exemple :</strong> y=5x est proportionnel, alors que y=5x+30 est affine (avec cout fixe).</div>
+    </section>
+
+    <section class="card">
+      <h2>Exercices</h2>
+
+      <h3>Exercice 1 - Cout de production</h3>
+      <p>C(q) = 120 + 8q, avec q en pieces.</p>
+      <ol>
+        <li>Donner C(10).</li>
+        <li>Interpreter le 120.</li>
+      </ol>
+      <button class="toggle-answer" data-target="corr-p1">Afficher la correction</button>
+      <div id="corr-p1" class="answer hidden">C(10)=200. Le 120 est le cout fixe.</div>
+
+      <h3>Exercice 2 - Batterie</h3>
+      <p>Niveau (%) : B(t)=100-5t, t en heures.</p>
+      <ol>
+        <li>Donner B(6).</li>
+        <li>Quand la batterie atteint-elle 0% ?</li>
+      </ol>
+      <button class="toggle-answer" data-target="corr-p2">Afficher la correction</button>
+      <div id="corr-p2" class="answer hidden">B(6)=70. Batterie vide pour t=20h.</div>
+
+      <h3>Exercice 3 - Surface materiau</h3>
+      <p>Une plaque rectangulaire mesure 12 cm par 7 cm. Calculer l'aire.</p>
+      <button class="toggle-answer" data-target="corr-p3">Afficher la correction</button>
+      <div id="corr-p3" class="answer hidden">Aire = 84 cm^2.</div>
+
+      <div class="interactive">
+        <h3>Exercices interactifs</h3>
+        <p><strong>Q1.</strong> C(q)=50+4q. Quelle est la valeur de C(25) ?</p>
+        <input id="pq1" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('pq1', 150, 'pfb1')">Verifier</button>
+        <div id="pfb1" class="feedback"></div>
+
+        <p><strong>Q2.</strong> P(t)=80-2t. Quelle est la valeur de P(10) ?</p>
+        <input id="pq2" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('pq2', 60, 'pfb2')">Verifier</button>
+        <div id="pfb2" class="feedback"></div>
+
+        <p><strong>Q3.</strong> Rectangle 9 cm x 3 cm : aire ?</p>
+        <input id="pq3" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('pq3', 27, 'pfb3')">Verifier</button>
+        <div id="pfb3" class="feedback"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>LessonsSTI2D - Chapitre Problemes Techniques 1re STI2D</footer>
+
+  <script>
+    document.querySelectorAll('.toggle-answer[data-target]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var targetId = btn.getAttribute('data-target');
+        var block = document.getElementById(targetId);
+        var isHidden = block.classList.contains('hidden');
+        block.classList.toggle('hidden');
+        btn.textContent = isHidden ? 'Masquer la correction' : 'Afficher la correction';
+      });
+    });
+
+    function checkNumeric(inputId, expectedValue, feedbackId) {
+      var raw = document.getElementById(inputId).value.trim().replace(',', '.');
+      var user = Number(raw);
+      var feedback = document.getElementById(feedbackId);
+
+      if (raw === '' || Number.isNaN(user)) {
+        feedback.textContent = 'Entre un nombre valide.';
+        feedback.className = 'feedback ko';
+        return;
+      }
+
+      if (Math.abs(user - expectedValue) < 0.0001) {
+        feedback.textContent = 'Correct.';
+        feedback.className = 'feedback ok';
+      } else {
+        feedback.textContent = 'Incorrect. Essaie encore.';
+        feedback.className = 'feedback ko';
+      }
+    }
+  </script>
+</body>
+</html>
+

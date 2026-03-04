@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapitre - Derivation et interpretation graphique</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Chapitre Maths - Derivation</h1>
+      <p>1re STI2D : derivation et interpretation graphique</p>
+      <nav>
+        <a href="/">Accueil</a>
+        <a href="/programme/premiere">Programme 1re</a>
+        <a href="/programme/premiere/mathematiques">Mathematiques</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Cours - 1) Sens de variation</h2>
+      <p>La derivee f'(x) indique le sens de variation de f :</p>
+      <ul>
+        <li>Si f'(x) &gt; 0, f est croissante.</li>
+        <li>Si f'(x) &lt; 0, f est decroissante.</li>
+        <li>Si f'(x) = 0, point stationnaire possible.</li>
+      </ul>
+      <div class="example"><strong>Exemple :</strong> si f'(x)=2x, alors f est decroissante sur x&lt;0 et croissante sur x&gt;0.</div>
+    </section>
+
+    <section class="card">
+      <h2>Cours - 2) Tangente</h2>
+      <p>Le nombre derive f'(a) est le coefficient directeur de la tangente a la courbe au point d'abscisse a.</p>
+      <p>Equation de tangente : <strong>y = f'(a)(x - a) + f(a)</strong>.</p>
+      <div class="example"><strong>Exemple :</strong> pour f(x)=x^2 en a=1, tangente : y=2(x-1)+1 soit y=2x-1.</div>
+    </section>
+
+    <section class="card">
+      <h2>Cours - 3) Derivees usuelles</h2>
+      <ul>
+        <li>Si f(x) = ax + b, alors f'(x) = a.</li>
+        <li>Si f(x) = x^2, alors f'(x) = 2x.</li>
+        <li>Si f(x) = x^n, alors f'(x) = n x^(n-1).</li>
+      </ul>
+      <div class="example"><strong>Exemple :</strong> si f(x)=x^3, alors f'(x)=3x^2.</div>
+    </section>
+
+    <section class="card">
+      <h2>Exercices</h2>
+
+      <h3>Exercice 1</h3>
+      <p>Soit f(x) = x^2 - 2x.</p>
+      <ol>
+        <li>Calculer f'(x).</li>
+        <li>Calculer f'(3).</li>
+      </ol>
+      <button class="toggle-answer" data-target="corr-d1">Afficher la correction</button>
+      <div id="corr-d1" class="answer hidden">f'(x) = 2x - 2 et f'(3) = 4.</div>
+
+      <h3>Exercice 2</h3>
+      <p>Soit g(x) = 5x + 1. Donner g'(x) et interpreter.</p>
+      <button class="toggle-answer" data-target="corr-d2">Afficher la correction</button>
+      <div id="corr-d2" class="answer hidden">g'(x) = 5. La courbe a une pente constante positive.</div>
+
+      <h3>Exercice 3</h3>
+      <p>Pour h(x) = x^2 en x = 2, donner le coefficient directeur de la tangente.</p>
+      <button class="toggle-answer" data-target="corr-d3">Afficher la correction</button>
+      <div id="corr-d3" class="answer hidden">h'(x) = 2x donc h'(2) = 4.</div>
+
+      <div class="interactive">
+        <h3>Exercices interactifs</h3>
+        <p><strong>Q1.</strong> f(x)=x^2. Quelle est la valeur de f'(4) ?</p>
+        <input id="dq1" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('dq1', 8, 'dfb1')">Verifier</button>
+        <div id="dfb1" class="feedback"></div>
+
+        <p><strong>Q2.</strong> g(x)=3x-7. Quelle est la valeur de g'(x) ?</p>
+        <input id="dq2" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('dq2', 3, 'dfb2')">Verifier</button>
+        <div id="dfb2" class="feedback"></div>
+
+        <p><strong>Q3.</strong> h(x)=x^2-6x. Quelle est la valeur de h'(3) ?</p>
+        <input id="dq3" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('dq3', 0, 'dfb3')">Verifier</button>
+        <div id="dfb3" class="feedback"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>LessonsSTI2D - Chapitre Derivation 1re STI2D</footer>
+
+  <script>
+    document.querySelectorAll('.toggle-answer[data-target]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var targetId = btn.getAttribute('data-target');
+        var block = document.getElementById(targetId);
+        var isHidden = block.classList.contains('hidden');
+        block.classList.toggle('hidden');
+        btn.textContent = isHidden ? 'Masquer la correction' : 'Afficher la correction';
+      });
+    });
+
+    function checkNumeric(inputId, expectedValue, feedbackId) {
+      var raw = document.getElementById(inputId).value.trim().replace(',', '.');
+      var user = Number(raw);
+      var feedback = document.getElementById(feedbackId);
+
+      if (raw === '' || Number.isNaN(user)) {
+        feedback.textContent = 'Entre un nombre valide.';
+        feedback.className = 'feedback ko';
+        return;
+      }
+
+      if (Math.abs(user - expectedValue) < 0.0001) {
+        feedback.textContent = 'Correct.';
+        feedback.className = 'feedback ok';
+      } else {
+        feedback.textContent = 'Incorrect. Essaie encore.';
+        feedback.className = 'feedback ko';
+      }
+    }
+  </script>
+</body>
+</html>
+

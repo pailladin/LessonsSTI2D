@@ -1,0 +1,22 @@
+﻿{
+  "name": "LessonsSTI2D",
+  "version": "1.0.0",
+  "description": "Plateforme de revision STI2D (1re et Terminale)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "keywords": [
+    "sti2d",
+    "revision",
+    "nodejs",
+    "education"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
+
