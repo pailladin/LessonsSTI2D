@@ -79,6 +79,12 @@ main {
   font-weight: 600;
 }
 
+.btn-disabled {
+  background: #aab7c4;
+  color: #eef3f8;
+  cursor: not-allowed;
+}
+
 .badge {
   display: inline-block;
   font-size: 0.8rem;

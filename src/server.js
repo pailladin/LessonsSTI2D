@@ -44,6 +44,10 @@ app.get('/programme/premiere/mathematiques/suites', (req, res) => {
   res.sendFile(path.join(viewsPath, 'premiere-mathematiques-suites.html'));
 });
 
+app.get('/programme/premiere/mathematiques/suites-particulieres', (req, res) => {
+  res.sendFile(path.join(viewsPath, 'premiere-mathematiques-suites-particulieres.html'));
+});
+
 app.get('/programme/premiere/physique-chimie', (req, res) => {
   res.sendFile(path.join(viewsPath, 'premiere-physique-chimie.html'));
 });

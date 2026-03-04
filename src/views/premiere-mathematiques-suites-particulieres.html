@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapitre - Suites particulieres</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Chapitre Maths - Suites particulieres</h1>
+      <p>1re STI2D : suites arithmetiques et geometriques, methodes et representations graphiques</p>
+      <nav>
+        <a href="/">Accueil</a>
+        <a href="/programme/premiere">Programme 1re</a>
+        <a href="/programme/premiere/mathematiques">Mathematiques</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>0) Vocabulaire et notations</h2>
+      <ul>
+        <li>Une suite est une liste de nombres notes <strong>(u_n)</strong> ou <strong>(v_n)</strong>.</li>
+        <li>Le premier terme est souvent <strong>u_0</strong> et n est un entier naturel.</li>
+        <li>On travaille souvent avec la relation entre deux termes consecutifs: <strong>u_{n+1}</strong> et <strong>u_n</strong>.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>1) Definition des suites arithmetiques et geometriques</h2>
+      <h3>A. Suite arithmetique</h3>
+      <p>Quand on passe d'un terme au suivant en <strong>ajoutant</strong> toujours le meme nombre reel, la suite est arithmetique.</p>
+      <ul>
+        <li>Ce nombre s'appelle la <strong>raison</strong>, notee <strong>r</strong>.</li>
+        <li>Relation de recurrence: <strong>u_{n+1} = u_n + r</strong>.</li>
+      </ul>
+      <div class="example"><strong>Exemple :</strong> suite des entiers pairs: u_0 = 0 et r = 2.</div>
+
+      <h3>B. Suite geometrique</h3>
+      <p>Quand on passe d'un terme au suivant en <strong>multipliant</strong> toujours par le meme nombre reel, la suite est geometrique.</p>
+      <ul>
+        <li>Ce nombre s'appelle la <strong>raison</strong>, notee <strong>q</strong>.</li>
+        <li>Relation de recurrence: <strong>v_{n+1} = v_n * q</strong>.</li>
+      </ul>
+      <div class="example"><strong>Exemple :</strong> puissances de 2: v_0 = 1 et q = 2.</div>
+    </section>
+
+    <section class="card">
+      <h2>2) Reconnaitre une suite arithmetique ou geometrique</h2>
+      <h3>A. Critere arithmetique</h3>
+      <p>Une suite est arithmetique si et seulement si <strong>u_{n+1} - u_n</strong> est constant.</p>
+      <h3>B. Critere geometrique</h3>
+      <p>Une suite non nulle est geometrique si et seulement si <strong>u_{n+1} / u_n</strong> est constant.</p>
+
+      <h3>Methode rapide</h3>
+      <ol>
+        <li>Calculer 3 termes consecutifs (u_0, u_1, u_2).</li>
+        <li>Comparer les differences (u_1-u_0 et u_2-u_1).</li>
+        <li>Comparer les quotients (u_1/u_0 et u_2/u_1) si termes non nuls.</li>
+        <li>Conclure: arithmetique, geometrique ou aucune des deux.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>3) Calculer les termes et expression explicite</h2>
+      <h3>A. Suite arithmetique</h3>
+      <ul>
+        <li>Terme general: <strong>u_n = u_0 + n*r</strong>.</li>
+        <li>Entre deux rangs: <strong>u_{n+p} = u_n + p*r</strong>.</li>
+      </ul>
+
+      <h3>B. Suite geometrique</h3>
+      <ul>
+        <li>Terme general: <strong>u_n = u_0 * q^n</strong>.</li>
+        <li>Entre deux rangs: <strong>u_{n+p} = u_n * q^p</strong>.</li>
+      </ul>
+
+      <h3>C. A la calculatrice</h3>
+      <ul>
+        <li>Entrer la recurrence u(n+1) a partir de u(n).</li>
+        <li>Definir u(0) (ou v(0)).</li>
+        <li>Generer un tableau de valeurs jusqu'au rang demande.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>4) Sens de variation</h2>
+      <h3>A. Arithmetique</h3>
+      <ul>
+        <li>Si r &gt; 0: suite strictement croissante.</li>
+        <li>Si r &lt; 0: suite strictement decroissante.</li>
+        <li>Si r = 0: suite constante.</li>
+      </ul>
+      <h3>B. Geometrique (cas usuels u0 &gt; 0)</h3>
+      <ul>
+        <li>Si q &gt; 1: suite croissante.</li>
+        <li>Si 0 &lt; q &lt; 1: suite decroissante.</li>
+        <li>Si q = 1: suite constante.</li>
+      </ul>
+      <div class="example"><strong>Remarque :</strong> si q &lt; 0, les signes alternent.</div>
+    </section>
+
+    <section class="card">
+      <h2>5) Representations graphiques</h2>
+      <h3>A. Suite arithmetique</h3>
+      <ul>
+        <li>Les points (n ; u_n) sont alignes.</li>
+        <li>La pente de la droite donne la raison r.</li>
+        <li>Croissance lineaire visible.</li>
+      </ul>
+      <h3>B. Suite geometrique</h3>
+      <ul>
+        <li>Les points ne sont en general pas alignes.</li>
+        <li>On observe une croissance ou decroissance de type exponentiel.</li>
+      </ul>
+      <div class="example">
+        Si les points sont alignes, on peut conjecturer une suite arithmetique puis verifier par le calcul des differences.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>6) Methode type controle</h2>
+      <ol>
+        <li>Identifier la forme donnee (recurrence ou formule explicite).</li>
+        <li>Calculer plusieurs termes pour observer une regularite.</li>
+        <li>Tester differences puis quotients.</li>
+        <li>Determiner la raison (r ou q).</li>
+        <li>Donner la nature de la suite, son premier terme et son sens de variation.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Exercices corriges</h2>
+
+      <h3>Exercice 1 - Definir la nature</h3>
+      <p>u_0 = 3 et u_{n+1} = u_n + 5. Nature et raison ?</p>
+      <button class="toggle-answer" data-target="sp-c1">Afficher la correction</button>
+      <div id="sp-c1" class="answer hidden">Suite arithmetique de raison r = 5.</div>
+
+      <h3>Exercice 2 - Calcul de termes arithmetiques</h3>
+      <p>u_0 = 3 et r = 5. Calculer u_1, u_2, u_3.</p>
+      <button class="toggle-answer" data-target="sp-c2">Afficher la correction</button>
+      <div id="sp-c2" class="answer hidden">u_1=8, u_2=13, u_3=18.</div>
+
+      <h3>Exercice 3 - Terme eloigne arithmetique</h3>
+      <p>u_0 = 3 et r = 5. Calculer u_10.</p>
+      <button class="toggle-answer" data-target="sp-c3">Afficher la correction</button>
+      <div id="sp-c3" class="answer hidden">u_10 = u_0 + 10r = 3 + 50 = 53.</div>
+
+      <h3>Exercice 4 - Definir une suite geometrique</h3>
+      <p>v_0 = 3 et q = 5. Donner v_{n+1} en fonction de v_n puis calculer v_1, v_2, v_3.</p>
+      <button class="toggle-answer" data-target="sp-c4">Afficher la correction</button>
+      <div id="sp-c4" class="answer hidden">v_{n+1}=5v_n ; v_1=15, v_2=75, v_3=375.</div>
+
+      <h3>Exercice 5 - Reconnaitre une arithmetique</h3>
+      <p>u_n = 2n + 3. La suite est-elle arithmetique ?</p>
+      <button class="toggle-answer" data-target="sp-c5">Afficher la correction</button>
+      <div id="sp-c5" class="answer hidden">
+        Oui: u_{n+1}-u_n = [2(n+1)+3]-(2n+3)=2, constant. Raison r=2 et u_0=3.
+      </div>
+
+      <h3>Exercice 6 - Contre-exemple arithmetique</h3>
+      <p>v_n = n^2 + 4. Cette suite est-elle arithmetique ?</p>
+      <button class="toggle-answer" data-target="sp-c6">Afficher la correction</button>
+      <div id="sp-c6" class="answer hidden">Non, car v_{n+1}-v_n = 2n+1 n'est pas constant.</div>
+
+      <h3>Exercice 7 - Reconnaitre une geometrique</h3>
+      <p>u_n = 3^n. La suite est-elle geometrique ?</p>
+      <button class="toggle-answer" data-target="sp-c7">Afficher la correction</button>
+      <div id="sp-c7" class="answer hidden">Oui, u_{n+1}/u_n = 3 constant, donc q=3 et u_0=1.</div>
+
+      <h3>Exercice 8 - Contre-exemple geometrique</h3>
+      <p>u_n = 20 * 0,5^n + 1. La suite est-elle geometrique ?</p>
+      <button class="toggle-answer" data-target="sp-c8">Afficher la correction</button>
+      <div id="sp-c8" class="answer hidden">
+        Non. Les quotients de termes consecutifs ne sont pas constants.
+      </div>
+
+      <h3>Exercice 9 - Exploitation graphique (arithmetique)</h3>
+      <p>Un nuage de points est aligne et l'ordonnee augmente de 2 entre deux rangs consecutifs. Conclure.</p>
+      <button class="toggle-answer" data-target="sp-c9">Afficher la correction</button>
+      <div id="sp-c9" class="answer hidden">On conjecture une suite arithmetique de raison r = 2.</div>
+
+      <h3>Exercice 10 - Exploitation graphique (geometrique)</h3>
+      <p>Par lecture graphique: v_0=0,5 ; v_1=1 ; v_2=2 ; v_3=4. Conclure.</p>
+      <button class="toggle-answer" data-target="sp-c10">Afficher la correction</button>
+      <div id="sp-c10" class="answer hidden">Les quotients valent 2, donc suite geometrique de raison q = 2.</div>
+
+      <h3>Exercice 11 - Sens de variation</h3>
+      <p>Etudier le sens de variation de: a) u_n = -4 + 2n, b) v_n = 5*(0,7)^n.</p>
+      <button class="toggle-answer" data-target="sp-c11">Afficher la correction</button>
+      <div id="sp-c11" class="answer hidden">
+        a) Arithmetique de raison r=2&gt;0 donc croissante. b) Geometrique avec q=0,7 entre 0 et 1, donc decroissante (u0&gt;0).
+      </div>
+
+      <h3>Exercice 12 - Melange methodes</h3>
+      <p>Suite definie par u_0=17 et u_{n+1}=u_n+11. Calculer u_1, u_2 et donner u_n.</p>
+      <button class="toggle-answer" data-target="sp-c12">Afficher la correction</button>
+      <div id="sp-c12" class="answer hidden">
+        Suite arithmetique r=11. u_1=28, u_2=39 et u_n=17+11n.
+      </div>
+
+      <div class="interactive">
+        <h3>Exercices interactifs (verification rapide)</h3>
+        <p><strong>Q1.</strong> u_0=6 et u_{n+1}=u_n+4. Quelle est la valeur de u_3 ?</p>
+        <input id="sp-q1" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('sp-q1', 18, 'sp-f1')">Verifier</button>
+        <div id="sp-f1" class="feedback"></div>
+
+        <p><strong>Q2.</strong> v_0=2 et v_{n+1}=3v_n. Quelle est la valeur de v_2 ?</p>
+        <input id="sp-q2" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('sp-q2', 18, 'sp-f2')">Verifier</button>
+        <div id="sp-f2" class="feedback"></div>
+
+        <p><strong>Q3.</strong> Pour u_n=5n+1, la raison arithmetique vaut ?</p>
+        <input id="sp-q3" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('sp-q3', 5, 'sp-f3')">Verifier</button>
+        <div id="sp-f3" class="feedback"></div>
+
+        <p><strong>Q4.</strong> Pour v_n=4*(1,5)^n, la raison geometrique vaut ?</p>
+        <input id="sp-q4" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('sp-q4', 1.5, 'sp-f4')">Verifier</button>
+        <div id="sp-f4" class="feedback"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>LessonsSTI2D - Chapitre Suites particulieres 1re STI2D</footer>
+
+  <script>
+    document.querySelectorAll('.toggle-answer[data-target]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var targetId = btn.getAttribute('data-target');
+        var block = document.getElementById(targetId);
+        var isHidden = block.classList.contains('hidden');
+        block.classList.toggle('hidden');
+        btn.textContent = isHidden ? 'Masquer la correction' : 'Afficher la correction';
+      });
+    });
+
+    function checkNumeric(inputId, expectedValue, feedbackId) {
+      var raw = document.getElementById(inputId).value.trim().replace(',', '.');
+      var user = Number(raw);
+      var feedback = document.getElementById(feedbackId);
+
+      if (raw === '' || Number.isNaN(user)) {
+        feedback.textContent = 'Entre un nombre valide.';
+        feedback.className = 'feedback ko';
+        return;
+      }
+
+      if (Math.abs(user - expectedValue) < 0.0001) {
+        feedback.textContent = 'Correct.';
+        feedback.className = 'feedback ok';
+      } else {
+        feedback.textContent = 'Incorrect. Essaie encore.';
+        feedback.className = 'feedback ko';
+      }
+    }
+  </script>
+</body>
+</html>
