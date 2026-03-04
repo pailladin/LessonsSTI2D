@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapitre - Mesure et incertitudes</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Chapitre Physique-Chimie - Mesure et incertitudes</h1>
+      <p>1re STI2D : grandeurs, unites, precision, incertitude et validation de mesures</p>
+      <nav>
+        <a href="/">Accueil</a>
+        <a href="/programme/premiere">Programme 1re</a>
+        <a href="/programme/premiere/physique-chimie">Physique-Chimie</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>0) Vocabulaire utile</h2>
+      <ul>
+        <li>Grandeur mesuree : tension, courant, temperature, masse, frequence...</li>
+        <li>Valeur mesuree : resultat brut d'une acquisition instrumentale.</li>
+        <li>Incertitude : zone dans laquelle on estime que la vraie valeur se trouve.</li>
+      </ul>
+      <div class="example"><strong>Notation :</strong> x = x_mesure +/- U(x).</div>
+    </section>
+
+    <section class="card">
+      <h2>1) Unites et conversions</h2>
+      <ul>
+        <li>Utiliser les unites SI : V, A, W, J, s, kg, m, K, Hz.</li>
+        <li>Conversions frequentes : 1 kWh = 3,6e6 J ; 1 cm = 1e-2 m ; 1 ms = 1e-3 s.</li>
+        <li>Toujours convertir avant d'appliquer une formule.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>2) Precision et incertitude</h2>
+      <h3>A. Sources d'erreurs</h3>
+      <ul>
+        <li>Erreurs systematiques : capteur mal etalonne, decalage constant.</li>
+        <li>Erreurs aleatoires : fluctuations dues au bruit et aux conditions experimentales.</li>
+      </ul>
+      <h3>B. Comment presenter un resultat</h3>
+      <ul>
+        <li>Donner la valeur + son incertitude, avec unite.</li>
+        <li>Adapter le nombre de chiffres significatifs au niveau de precision.</li>
+      </ul>
+      <h3>C. Compatibilite de deux mesures</h3>
+      <ul>
+        <li>Construire les intervalles [x-U ; x+U].</li>
+        <li>Si les intervalles se chevauchent, les mesures sont compatibles.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>3) Exploitation de graphes experimentaux</h2>
+      <ul>
+        <li>Tracer des axes nommes avec unites et echelles regulieres.</li>
+        <li>Lire une valeur, une pente, une ordonnee a l'origine.</li>
+        <li>Confronter la tendance experimentale au modele theorique.</li>
+      </ul>
+      <div class="example"><strong>Reflexe :</strong> une droite experimentale peut valider une loi proportionnelle.</div>
+    </section>
+
+    <section class="card">
+      <h2>4) Methode type evaluation</h2>
+      <ol>
+        <li>Identifier la grandeur et son unite SI.</li>
+        <li>Verifier la qualite de la mesure (precision, dispersion).</li>
+        <li>Calculer le resultat en gardant les unites.</li>
+        <li>Donner la conclusion physique avec incertitude.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Exercices corriges</h2>
+
+      <h3>Exercice 1 - Conversion</h3>
+      <p>Convertir 0,45 kWh en joules.</p>
+      <button class="toggle-answer" data-target="mi-c1">Afficher la correction</button>
+      <div id="mi-c1" class="answer hidden">0,45 * 3,6e6 = 1,62e6 J.</div>
+
+      <h3>Exercice 2 - Ecriture d'un resultat</h3>
+      <p>Une temperature est mesuree a 72,4 degC avec une incertitude de 0,6 degC. Ecrire le resultat.</p>
+      <button class="toggle-answer" data-target="mi-c2">Afficher la correction</button>
+      <div id="mi-c2" class="answer hidden">T = (72,4 +/- 0,6) degC.</div>
+
+      <h3>Exercice 3 - Compatibilite</h3>
+      <p>x1 = 9,8 +/- 0,3 et x2 = 10,2 +/- 0,2. Sont-elles compatibles ?</p>
+      <button class="toggle-answer" data-target="mi-c3">Afficher la correction</button>
+      <div id="mi-c3" class="answer hidden">[9,5 ; 10,1] et [10,0 ; 10,4] se chevauchent entre 10,0 et 10,1, donc compatibles.</div>
+
+      <div class="interactive">
+        <h3>Exercices interactifs</h3>
+        <p><strong>Q1.</strong> 250 ms = combien de secondes ?</p>
+        <input id="mi-q1" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('mi-q1', 0.25, 'mi-f1')">Verifier</button>
+        <div id="mi-f1" class="feedback"></div>
+
+        <p><strong>Q2.</strong> 3,2 kW = combien de W ?</p>
+        <input id="mi-q2" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('mi-q2', 3200, 'mi-f2')">Verifier</button>
+        <div id="mi-f2" class="feedback"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>LessonsSTI2D - Mesure et incertitudes</footer>
+
+  <script>
+    document.querySelectorAll('.toggle-answer[data-target]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var targetId = btn.getAttribute('data-target');
+        var block = document.getElementById(targetId);
+        var isHidden = block.classList.contains('hidden');
+        block.classList.toggle('hidden');
+        btn.textContent = isHidden ? 'Masquer la correction' : 'Afficher la correction';
+      });
+    });
+
+    function checkNumeric(inputId, expectedValue, feedbackId) {
+      var raw = document.getElementById(inputId).value.trim().replace(',', '.');
+      var user = Number(raw);
+      var feedback = document.getElementById(feedbackId);
+      if (raw === '' || Number.isNaN(user)) {
+        feedback.textContent = 'Entre un nombre valide.';
+        feedback.className = 'feedback ko';
+        return;
+      }
+      if (Math.abs(user - expectedValue) < 0.0001) {
+        feedback.textContent = 'Correct.';
+        feedback.className = 'feedback ok';
+      } else {
+        feedback.textContent = 'Incorrect. Essaie encore.';
+        feedback.className = 'feedback ko';
+      }
+    }
+  </script>
+</body>
+</html>

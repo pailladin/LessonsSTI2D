@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapitre - Matiere et materiaux</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Chapitre Physique-Chimie - Matiere et materiaux</h1>
+      <p>1re STI2D : proprietes des materiaux, combustions, solutions, oxydoreduction et piles</p>
+      <nav>
+        <a href="/">Accueil</a>
+        <a href="/programme/premiere">Programme 1re</a>
+        <a href="/programme/premiere/physique-chimie">Physique-Chimie</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Plan du chapitre</h2>
+      <div class="tabs-nav" role="tablist" aria-label="Chapitres Matiere et materiaux">
+        <button class="tab-btn" type="button" role="tab" id="tab-part-1" aria-controls="panel-part-1" aria-selected="true" data-tab-target="panel-part-1">
+          Proprietes des materiaux et organisation de la matiere
+        </button>
+        <button class="tab-btn" type="button" role="tab" id="tab-part-2" aria-controls="panel-part-2" aria-selected="false" data-tab-target="panel-part-2">
+          Combustions
+        </button>
+        <button class="tab-btn" type="button" role="tab" id="tab-part-3" aria-controls="panel-part-3" aria-selected="false" data-tab-target="panel-part-3">
+          Preparation des solutions - Oxydoreduction - Piles
+        </button>
+      </div>
+      <div class="example">
+        Utilise les onglets pour naviguer entre les 3 chapitres.
+      </div>
+    </section>
+
+    <div class="tab-panel" id="panel-part-1" role="tabpanel" aria-labelledby="tab-part-1">
+      <section class="card">
+        <h2>1) Representation d'entites chimiques</h2>
+      <p>
+        Pour devenir stable, chaque atome participant a la formation d'une molecule adopte la configuration electronique du gaz noble le plus proche.
+        Le nombre de <strong>doublets liants</strong> (mise en commun de deux electrons d'un atome) correspond au nombre d'electrons manquants
+        sur sa couche de valence. Les electrons restants de sa couche de valence se regroupent par paires pour former un
+        <strong>doublet non-liant</strong>.
+      </p>
+      <div class="example">
+        <strong>Exemple :</strong> il manque un electron a l'atome d'hydrogene pour etre stable (il forme un doublet liant).
+        Il manque deux electrons a l'atome d'oxygene pour etre stable (il forme deux doublets liants et conserve deux doublets non-liants).
+      </div>
+
+      <p>Il existe plusieurs conventions de representation des molecules :</p>
+      <ul>
+        <li><strong>La formule brute</strong> : elle indique uniquement la nature et le nombre des atomes presents dans la molecule.</li>
+        <li><strong>La formule developpee</strong> : elle indique tous les atomes presents dans la molecule et uniquement des doublets liants.</li>
+        <li><strong>La formule semi-developpee</strong> : pour simplifier l'ecriture de la formule developpee, les doublets liants entre les atomes d'hydrogene et les autres atomes ne sont pas representes.</li>
+        <li><strong>Schema de Lewis</strong> : il indique tous les atomes presents dans la molecule et tous les doublets qu'ils soient liants ou non-liants.</li>
+      </ul>
+      <div class="example">
+        <strong>Exemple (meme molecule CH2O2) :</strong><br />
+        Formule brute : <strong>CH2O2</strong><br />
+        Formule developpee : <strong>H-C(=O)-O-H</strong>
+        <div class="molecule-preview">
+          <canvas id="ch2o2-canvas" class="molecule-canvas" width="220" height="120"></canvas>
+        </div>
+        Formule semi-developpee : <strong>H-COOH</strong><br />
+        Schema de Lewis : <strong>H-C(=O:)-O:-H</strong> (les ":" representent des doublets non-liants sur O).
+      </div>
+      </section>
+
+      <section class="card">
+      <h2>2) Schema de Lewis (niveau 1re STI2D)</h2>
+      <ul>
+        <li>Etape 1 : compter les electrons de valence de tous les atomes.</li>
+        <li>Etape 2 : placer les atomes avec l'atome central le moins electronegatif (hors H).</li>
+        <li>Etape 3 : former des liaisons covalentes (doublets liants).</li>
+        <li>Etape 4 : completer les doublets non liants pour satisfaire duet/octet.</li>
+      </ul>
+      <div class="example">
+        <strong>Exemple :</strong> H2O comporte 2 liaisons O-H et 2 doublets non liants sur l'oxygene.
+      </div>
+      </section>
+
+      <section class="card">
+      <h2>3) Groupes caracteristiques et familles</h2>
+      <p>
+        Un groupe caracteristique est une partie de la molecule :<br />
+        c'est un ensemble d'atomes lies entre eux dont au moins un n'est pas un atome de carbone.
+      </p>
+      <p>
+        Le groupe caracteristique donne une fonction chimique specifique a la molecule qui le possede.
+        Les molecules portant ce groupe forment une famille.
+      </p>
+      <table class="group-table">
+        <thead>
+          <tr>
+            <th><strong>Groupe caracteristique</strong></th>
+            <th><strong>Groupe hydroxyle</strong><br /><span>-OH</span></th>
+            <th>
+              <strong>Groupe carboxyle</strong><br />
+              <svg width="92" height="54" viewBox="0 0 92 54" aria-label="Groupe carboxyle" role="img">
+                <text x="36" y="31" font-size="16" font-family="Arial, sans-serif">C</text>
+                <text x="58" y="13" font-size="16" font-family="Arial, sans-serif">O</text>
+                <text x="60" y="47" font-size="16" font-family="Arial, sans-serif">OH</text>
+                <line x1="44" y1="22" x2="56" y2="14" stroke="#1f2a37" stroke-width="1.5" />
+                <line x1="47" y1="25" x2="59" y2="17" stroke="#1f2a37" stroke-width="1.5" />
+                <line x1="20" y1="31" x2="33" y2="31" stroke="#1f2a37" stroke-width="1.5" />
+                <line x1="46" y1="31" x2="58" y2="40" stroke="#1f2a37" stroke-width="1.5" />
+              </svg>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Famille</strong></td>
+            <td>alcool</td>
+            <td>acide carboxylique</td>
+          </tr>
+        </tbody>
+      </table>
+      </section>
+
+      <section class="card">
+      <h2>4) Les macromolecules</h2>
+      <div class="macro-layout">
+        <div>
+          <p>
+            Une macromolecule est une molecule constituee d'un tres grand nombre d'atomes.
+            Si elle est constituee d'un motif (monomere) qui se repete, on parle de
+            <strong>polymere</strong>.
+          </p>
+        </div>
+
+        <div class="macro-mols">
+          <article class="macro-mol">
+            <h4>Styrene</h4>
+            <svg viewBox="0 0 160 170" aria-label="Schema styrene" role="img">
+              <polygon points="78,30 112,50 112,90 78,110 44,90 44,50" fill="none" stroke="#1f2a37" stroke-width="2"/>
+              <line x1="74" y1="34" x2="108" y2="54" stroke="#1f2a37" stroke-width="1.2"/>
+              <line x1="48" y1="52" x2="48" y2="88" stroke="#1f2a37" stroke-width="1.2"/>
+              <line x1="80" y1="106" x2="108" y2="90" stroke="#1f2a37" stroke-width="1.2"/>
+
+              <line x1="112" y1="70" x2="132" y2="64" stroke="#1f2a37" stroke-width="2"/>
+              <text x="96" y="73" font-size="11">CH</text>
+              <text x="133" y="66" font-size="11">CH</text>
+
+              <line x1="139" y1="61" x2="152" y2="52" stroke="#1f2a37" stroke-width="2"/>
+              <line x1="141" y1="66" x2="154" y2="57" stroke="#1f2a37" stroke-width="1.4"/>
+              <text x="150" y="49" font-size="10">H</text>
+              <text x="155" y="60" font-size="10">H</text>
+              <text x="138" y="51" font-size="10">H</text>
+
+              <text x="33" y="52" font-size="10">HC</text>
+              <text x="33" y="93" font-size="10">HC</text>
+              <text x="73" y="122" font-size="10">CH</text>
+              <text x="72" y="24" font-size="10">H</text>
+            </svg>
+          </article>
+
+          <article class="macro-mol">
+            <h4>Polystyrene</h4>
+            <svg viewBox="0 0 180 170" aria-label="Schema polystyrene" role="img">
+              <text x="5" y="88" font-size="24">[</text>
+              <text x="168" y="88" font-size="24">]</text>
+              <text x="174" y="88" font-size="14">n</text>
+              <line x1="20" y1="85" x2="60" y2="85" stroke="#1f2a37" stroke-width="2"/>
+              <line x1="60" y1="85" x2="100" y2="85" stroke="#1f2a37" stroke-width="2"/>
+              <line x1="100" y1="85" x2="140" y2="85" stroke="#1f2a37" stroke-width="2"/>
+              <line x1="80" y1="85" x2="80" y2="55" stroke="#1f2a37" stroke-width="2"/>
+              <polygon points="80,20 110,37 110,70 80,87 50,70 50,37" fill="none" stroke="#1f2a37" stroke-width="2"/>
+            </svg>
+          </article>
+        </div>
+      </div>
+      </section>
+
+      <section class="card">
+      <h2>5) Les materiaux</h2>
+      <p>Un materiau est un type de matiere transformee par l'etre humain pour produire un objet.</p>
+      <p>Il existe trois familles principales : les materiaux metalliques, organiques et mineraux.</p>
+      <p>
+        A partir de ces materiaux, on peut former les materiaux composites obtenus en combinant differents materiaux
+        non miscibles d'au moins deux familles differentes. Les proprietes du materiau composite sont differentes
+        de celles des materiaux qui le composent.
+      </p>
+      <p>Exemple : beton arme (<strong>beton + acier</strong>).</p>
+      <p>Le choix du materiau se fait en fonction de ses proprietes physiques, chimiques et mecaniques.</p>
+      <p>
+        Lors de l'elaboration d'un objet, il faut tenir compte du cahier des charges, des contraintes de fabrication,
+        de l'usage et aussi du recyclage en vie de vie de l'objet.
+      </p>
+      <img
+        src="https://static.wixstatic.com/media/2688a3_b74724196a184a29a6a0bb3e26639f21~mv2.png/v1/fill/w_528,h_456,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/2688a3_b74724196a184a29a6a0bb3e26639f21~mv2.png"
+        alt="Cycle de vie des materiaux"
+        style="display:block; max-width:100%; height:auto; margin-top:0.8rem;"
+      />
+      </section>
+
+      <section class="card">
+      <h3>Methode de resolution</h3>
+      <ol>
+        <li>Identifier le type de representation demandee (brute, semi-developpee, Lewis).</li>
+        <li>Compter les atomes et verifier la coherence de la formule.</li>
+        <li>Reperer les groupes caracteristiques (-OH, -COOH, etc.).</li>
+        <li>Relier structure chimique et proprietes du materiau.</li>
+        <li>Conclure avec un choix technique justifie.</li>
+      </ol>
+      </section>
+
+      <section class="card">
+      <h3>Exercices corriges</h3>
+      <h4>Exercice 1 - Representation de molecule</h4>
+      <p>Quelle representation montre les doublets liants et non liants autour des atomes ?</p>
+      <button class="toggle-answer" data-target="mm1-c1">Afficher la correction</button>
+      <div id="mm1-c1" class="answer hidden">Le schema de Lewis.</div>
+
+      <h4>Exercice 2 - Groupes caracteristiques</h4>
+      <p>Associer le groupe a la famille: -OH ; -COOH.</p>
+      <button class="toggle-answer" data-target="mm1-c2">Afficher la correction</button>
+      <div id="mm1-c2" class="answer hidden">-OH correspond aux alcools ; -COOH correspond aux acides carboxyliques.</div>
+
+      <h4>Exercice 3 - Macromolecule et polymere</h4>
+      <p>Une grande molecule formee par repetition d'un motif est-elle un polymere ?</p>
+      <button class="toggle-answer" data-target="mm1-c3">Afficher la correction</button>
+      <div id="mm1-c3" class="answer hidden">Oui. Une macromolecule constituee d'un motif repetitif est un polymere.</div>
+
+      <div class="interactive">
+        <h4>Exercice interactif</h4>
+        <p><strong>Q1.</strong> Le groupe -OH correspond-il a la famille des alcools ? (1 oui / 2 non)</p>
+        <input id="mm1-q1" type="text" placeholder="1 ou 2" />
+        <button class="toggle-answer" onclick="checkNumeric('mm1-q1', 1, 'mm1-f1')">Verifier</button>
+        <div id="mm1-f1" class="feedback"></div>
+      </div>
+      </section>
+    </div>
+
+    <div class="tab-panel hidden" id="panel-part-2" role="tabpanel" aria-labelledby="tab-part-2">
+      <section class="card">
+      <h2>1) Definition</h2>
+      <p>Une combustion est une transformation chimique entre un combustible et un comburant (souvent le dioxygene).</p>
+      <ul>
+        <li>Conditions: combustible + comburant + energie d'activation.</li>
+        <li>Produits frequents (hydrocarbures): CO2 et H2O si combustion complete.</li>
+      </ul>
+      </section>
+
+      <section class="card">
+      <h2>2) Combustion complete / incomplete</h2>
+      <ul>
+        <li>Complete: production maximale d'energie, emissions limitees a CO2 + H2O.</li>
+        <li>Incomplete: formation possible de CO (toxique) et suies (particules).</li>
+      </ul>
+      </section>
+
+      <section class="card">
+      <h2>3) Bilans et securite</h2>
+      <ul>
+        <li>Equilibrer l'equation de reaction avant tout bilan.</li>
+        <li>Analyser rendement energetique et pertes thermiques.</li>
+        <li>Prendre en compte les risques: incendie, intoxication au monoxyde de carbone.</li>
+      </ul>
+      </section>
+
+      <section class="card">
+      <h2>4) Enjeux environnementaux</h2>
+      <ul>
+        <li>La combustion emet du CO2 (effet de serre).</li>
+        <li>Les polluants d'une combustion incomplete degradent la qualite de l'air.</li>
+        <li>Comparer les energies selon performance et impact environnemental.</li>
+      </ul>
+      </section>
+
+      <section class="card">
+      <h3>Methode de resolution</h3>
+      <ol>
+        <li>Identifier combustible, comburant et produits.</li>
+        <li>Determiner si la combustion est complete ou incomplete.</li>
+        <li>Ecrire et equilibrer l'equation chimique.</li>
+        <li>Analyser les risques (CO, incendie) et l'impact environnemental.</li>
+      </ol>
+      </section>
+
+      <section class="card">
+      <h3>Exercices corriges</h3>
+      <h4>Exercice 1 - Combustion complete ou incomplete</h4>
+      <p>On observe des suies noires et une flamme jaune instable. S'agit-il d'une combustion complete ?</p>
+      <button class="toggle-answer" data-target="mm2-c1">Afficher la correction</button>
+      <div id="mm2-c1" class="answer hidden">
+        Non. Les suies indiquent une combustion incomplete (manque de dioxygene) avec production de particules et possiblement de CO.
+      </div>
+
+      <h4>Exercice 2 - Produits de combustion</h4>
+      <p>Dans une combustion complete d'un hydrocarbure, quels sont les produits principaux ?</p>
+      <button class="toggle-answer" data-target="mm2-c2">Afficher la correction</button>
+      <div id="mm2-c2" class="answer hidden">Le dioxyde de carbone (CO2) et l'eau (H2O).</div>
+
+      <div class="interactive">
+        <h4>Exercice interactif</h4>
+        <p><strong>Q1.</strong> Une combustion incomplete produit-elle du CO ? (1 oui / 2 non)</p>
+        <input id="mm2-q1" type="text" placeholder="1 ou 2" />
+        <button class="toggle-answer" onclick="checkNumeric('mm2-q1', 1, 'mm2-f1')">Verifier</button>
+        <div id="mm2-f1" class="feedback"></div>
+      </div>
+      </section>
+    </div>
+
+    <div class="tab-panel hidden" id="panel-part-3" role="tabpanel" aria-labelledby="tab-part-3">
+      <section class="card">
+      <h2>1) Preparation des solutions</h2>
+      <ul>
+        <li>Concentration molaire: <strong>C = n / V</strong>.</li>
+        <li>Dissolution: preparer une solution a partir d'un solide.</li>
+        <li>Dilution: <strong>Cmere * Vpreleve = Cfille * Vfille</strong>.</li>
+        <li>Materiel: fiole jaugee, pipette jaugee, becher; protocole rigoureux.</li>
+      </ul>
+      </section>
+
+      <section class="card">
+      <h2>2) Oxydoreduction (base STI2D)</h2>
+      <ul>
+        <li>Oxydation: perte d'electrons.</li>
+        <li>Reduction: gain d'electrons.</li>
+        <li>Un oxydant capte des electrons; un reducteur cede des electrons.</li>
+      </ul>
+      </section>
+
+      <section class="card">
+      <h2>3) Piles electrochimiques</h2>
+      <ul>
+        <li>Une pile convertit l'energie chimique en energie electrique.</li>
+        <li>Deux demi-piles + pont salin + circuit externe.</li>
+        <li>Le courant externe va du pole + vers le pole -, les electrons circulent en sens inverse.</li>
+        <li>La tension de pile depend des couples oxydant/reducteur utilises.</li>
+      </ul>
+      </section>
+
+      <section class="card">
+      <h2>4) Application technique</h2>
+      <ul>
+        <li>Choisir une pile/batterie selon tension, capacite, masse et securite.</li>
+        <li>Comparer piles primaires et accumulateurs rechargeables.</li>
+      </ul>
+      </section>
+
+      <section class="card">
+      <h3>Methode de resolution</h3>
+      <ol>
+        <li>Identifier le sous-theme: solution, redox ou pile.</li>
+        <li>Poser la relation adaptee (C=n/V, dilution, demi-equation, etc.).</li>
+        <li>Verifier les unites et le sens physique du resultat.</li>
+        <li>Conclure sur l'application technique (preparation, choix de pile, securite).</li>
+      </ol>
+      </section>
+
+      <section class="card">
+      <h3>Exercices corriges</h3>
+      <h4>Exercice 1 - Dilution</h4>
+      <p>On veut preparer 100 mL d'une solution a 0,20 mol/L a partir d'une solution mere a 1,0 mol/L. Quel volume de solution mere faut-il prelever ?</p>
+      <button class="toggle-answer" data-target="mm3-c1">Afficher la correction</button>
+      <div id="mm3-c1" class="answer hidden">
+        Cmere*Vpreleve = Cfille*Vfille donc Vpreleve = (0,20*100)/1,0 = 20 mL.
+      </div>
+
+      <h4>Exercice 2 - Oxydoreduction</h4>
+      <p>Dans la demi-equation Fe2+ -> Fe3+ + e-, l'espece Fe2+ est-elle oxydant ou reducteur ?</p>
+      <button class="toggle-answer" data-target="mm3-c2">Afficher la correction</button>
+      <div id="mm3-c2" class="answer hidden">
+        Fe2+ perd un electron: c'est une oxydation. Fe2+ joue donc le role de reducteur.
+      </div>
+
+      <h4>Exercice 3 - Pile</h4>
+      <p>Une pile alimente une LED. Quelle forme d'energie est convertie dans la pile ?</p>
+      <button class="toggle-answer" data-target="mm3-c3">Afficher la correction</button>
+      <div id="mm3-c3" class="answer hidden">
+        La pile convertit l'energie chimique en energie electrique.
+      </div>
+
+      <div class="interactive">
+        <h4>Exercice interactif</h4>
+        <p><strong>Q1.</strong> Pour une dilution: Cmere = 2,0 mol/L, Cfille = 0,5 mol/L, Vfille = 100 mL. Vpreleve = ? (mL)</p>
+        <input id="mm3-q1" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('mm3-q1', 25, 'mm3-f1')">Verifier</button>
+        <div id="mm3-f1" class="feedback"></div>
+      </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>LessonsSTI2D - Matiere et materiaux</footer>
+
+  <script src="https://unpkg.com/smiles-drawer@1.2.0/dist/smiles-drawer.min.js"></script>
+  <script>
+    function renderCh2o2() {
+      if (!window.SmilesDrawer) return;
+
+      var drawer = new SmilesDrawer.Drawer({
+        width: 220,
+        height: 120,
+        compactDrawing: true
+      });
+
+      SmilesDrawer.parse('O=CO', function (tree) {
+        drawer.draw(tree, 'ch2o2-canvas', 'light', false);
+      }, function () {
+        var canvas = document.getElementById('ch2o2-canvas');
+        if (!canvas) return;
+        var ctx = canvas.getContext('2d');
+        ctx.font = '14px sans-serif';
+        ctx.fillStyle = '#b42318';
+        ctx.fillText('Rendu indisponible', 36, 60);
+      });
+    }
+
+    window.addEventListener('load', renderCh2o2);
+
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var targetId = btn.getAttribute('data-tab-target');
+        if (!targetId) return;
+
+        document.querySelectorAll('.tab-btn').forEach(function (otherBtn) {
+          otherBtn.setAttribute('aria-selected', otherBtn === btn ? 'true' : 'false');
+        });
+
+        document.querySelectorAll('.tab-panel').forEach(function (panel) {
+          panel.classList.toggle('hidden', panel.id !== targetId);
+        });
+      });
+    });
+
+    document.querySelectorAll('.toggle-answer[data-target]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var targetId = btn.getAttribute('data-target');
+        var block = document.getElementById(targetId);
+        var isHidden = block.classList.contains('hidden');
+        block.classList.toggle('hidden');
+        btn.textContent = isHidden ? 'Masquer la correction' : 'Afficher la correction';
+      });
+    });
+
+    function checkNumeric(inputId, expectedValue, feedbackId) {
+      var raw = document.getElementById(inputId).value.trim().replace(',', '.');
+      var user = Number(raw);
+      var feedback = document.getElementById(feedbackId);
+      if (raw === '' || Number.isNaN(user)) {
+        feedback.textContent = 'Entre un nombre valide.';
+        feedback.className = 'feedback ko';
+        return;
+      }
+      if (Math.abs(user - expectedValue) < 0.0001) {
+        feedback.textContent = 'Correct.';
+        feedback.className = 'feedback ok';
+      } else {
+        feedback.textContent = 'Incorrect. Essaie encore.';
+        feedback.className = 'feedback ko';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapitre - Energie et conversions</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Chapitre Physique-Chimie - Energie et conversions</h1>
+      <p>1re STI2D : puissance, energie, rendement et transferts</p>
+      <nav>
+        <a href="/">Accueil</a>
+        <a href="/programme/premiere">Programme 1re</a>
+        <a href="/programme/premiere/physique-chimie">Physique-Chimie</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>1) Relations fondamentales</h2>
+      <ul>
+        <li>Puissance : <strong>P = E / Delta t</strong>.</li>
+        <li>Energie : <strong>E = P * Delta t</strong>.</li>
+        <li>En electrique : <strong>P = U * I</strong>.</li>
+        <li>Rendement : <strong>eta = P_utile / P_recue</strong>.</li>
+      </ul>
+      <div class="example"><strong>Unites :</strong> P en W, E en J (ou Wh), t en s (ou h).</div>
+    </section>
+
+    <section class="card">
+      <h2>2) Energie electrique</h2>
+      <ul>
+        <li>Loi d'Ohm (resistance) : <strong>U = R * I</strong>.</li>
+        <li>Pertes par effet Joule : echauffement des conducteurs.</li>
+        <li>Calcul de consommation : utile pour bilan energetique d'un systeme.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>3) Energie thermique</h2>
+      <ul>
+        <li>Variation thermique : <strong>Q = m * c * Delta T</strong>.</li>
+        <li>Conduction, convection, rayonnement.</li>
+        <li>Role de l'isolation et impact sur le rendement global.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>4) Energie mecanique</h2>
+      <ul>
+        <li>Energie cinetique : <strong>Ec = 1/2 * m * v^2</strong>.</li>
+        <li>Energie potentielle : <strong>Ep = m * g * h</strong>.</li>
+        <li>Conservation approchee de Em = Ec + Ep si pertes faibles.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>5) Methode type probleme</h2>
+      <ol>
+        <li>Faire le bilan des energies entrantes/sortantes.</li>
+        <li>Identifier les pertes et calculer le rendement.</li>
+        <li>Verifier la coherence des unites.</li>
+        <li>Conclure sur la performance du systeme.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Exercices corriges</h2>
+
+      <h3>Exercice 1 - Puissance</h3>
+      <p>Un moteur recoit 48 V et 5 A. Calculer sa puissance electrique.</p>
+      <button class="toggle-answer" data-target="ec-c1">Afficher la correction</button>
+      <div id="ec-c1" class="answer hidden">P = U*I = 48*5 = 240 W.</div>
+
+      <h3>Exercice 2 - Energie</h3>
+      <p>Un appareil de 1200 W fonctionne 15 min. Quelle energie en J ?</p>
+      <button class="toggle-answer" data-target="ec-c2">Afficher la correction</button>
+      <div id="ec-c2" class="answer hidden">t=900 s, donc E = P*t = 1200*900 = 1 080 000 J.</div>
+
+      <h3>Exercice 3 - Rendement</h3>
+      <p>Puissance recue: 350 W ; puissance utile: 245 W. Calculer eta.</p>
+      <button class="toggle-answer" data-target="ec-c3">Afficher la correction</button>
+      <div id="ec-c3" class="answer hidden">eta = 245/350 = 0,70 soit 70 %.</div>
+
+      <h3>Exercice 4 - Thermique</h3>
+      <p>On chauffe 1,2 kg d'eau (c=4180 J/kg/K) de 18 degC a 28 degC. Calculer Q.</p>
+      <button class="toggle-answer" data-target="ec-c4">Afficher la correction</button>
+      <div id="ec-c4" class="answer hidden">Delta T = 10 K ; Q = 1,2*4180*10 = 50 160 J.</div>
+
+      <div class="interactive">
+        <h3>Exercices interactifs</h3>
+        <p><strong>Q1.</strong> U=12 V et I=2 A. P=?</p>
+        <input id="ec-q1" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('ec-q1', 24, 'ec-f1')">Verifier</button>
+        <div id="ec-f1" class="feedback"></div>
+
+        <p><strong>Q2.</strong> P=500 W pendant 2 h. E en Wh ?</p>
+        <input id="ec-q2" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('ec-q2', 1000, 'ec-f2')">Verifier</button>
+        <div id="ec-f2" class="feedback"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>LessonsSTI2D - Energie et conversions</footer>
+
+  <script>
+    document.querySelectorAll('.toggle-answer[data-target]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var targetId = btn.getAttribute('data-target');
+        var block = document.getElementById(targetId);
+        var isHidden = block.classList.contains('hidden');
+        block.classList.toggle('hidden');
+        btn.textContent = isHidden ? 'Masquer la correction' : 'Afficher la correction';
+      });
+    });
+
+    function checkNumeric(inputId, expectedValue, feedbackId) {
+      var raw = document.getElementById(inputId).value.trim().replace(',', '.');
+      var user = Number(raw);
+      var feedback = document.getElementById(feedbackId);
+      if (raw === '' || Number.isNaN(user)) {
+        feedback.textContent = 'Entre un nombre valide.';
+        feedback.className = 'feedback ko';
+        return;
+      }
+      if (Math.abs(user - expectedValue) < 0.0001) {
+        feedback.textContent = 'Correct.';
+        feedback.className = 'feedback ok';
+      } else {
+        feedback.textContent = 'Incorrect. Essaie encore.';
+        feedback.className = 'feedback ko';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -48,6 +48,22 @@ app.get('/programme/premiere/physique-chimie', (req, res) => {
   res.sendFile(path.join(viewsPath, 'premiere-physique-chimie.html'));
 });
 
+app.get('/programme/premiere/physique-chimie/mesure-incertitudes', (req, res) => {
+  res.sendFile(path.join(viewsPath, 'premiere-physique-chimie-mesure-incertitudes.html'));
+});
+
+app.get('/programme/premiere/physique-chimie/energie-conversions', (req, res) => {
+  res.sendFile(path.join(viewsPath, 'premiere-physique-chimie-energie-conversions.html'));
+});
+
+app.get('/programme/premiere/physique-chimie/matiere-materiaux', (req, res) => {
+  res.sendFile(path.join(viewsPath, 'premiere-physique-chimie-matiere-materiaux.html'));
+});
+
+app.get('/programme/premiere/physique-chimie/ondes-information', (req, res) => {
+  res.sendFile(path.join(viewsPath, 'premiere-physique-chimie-ondes-information.html'));
+});
+
 app.get('/programme/premiere/ingenierie', (req, res) => {
   res.sendFile(path.join(viewsPath, 'premiere-ingenierie.html'));
 });

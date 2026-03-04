@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapitre - Ondes et information</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Chapitre Physique-Chimie - Ondes et information</h1>
+      <p>1re STI2D : propagation, caracteristiques, spectre et transmission</p>
+      <nav>
+        <a href="/">Accueil</a>
+        <a href="/programme/premiere">Programme 1re</a>
+        <a href="/programme/premiere/physique-chimie">Physique-Chimie</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>1) Grandeurs d'une onde</h2>
+      <ul>
+        <li>Periode T (s), frequence f (Hz), longueur d'onde lambda (m).</li>
+        <li>Relation fondamentale : <strong>v = lambda * f</strong>.</li>
+        <li>Une onde transporte de l'energie, pas de matiere.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>2) Ondes mecaniques</h2>
+      <ul>
+        <li>Exemple : onde sonore, onde sur une corde.</li>
+        <li>Besoin d'un milieu materiel pour se propager.</li>
+        <li>Vitesse dependante du milieu et de ses proprietes.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>3) Ondes electromagnetiques</h2>
+      <ul>
+        <li>Se propagent dans le vide (contrairement au son).</li>
+        <li>Spectre: radio, micro-ondes, IR, visible, UV, X, gamma.</li>
+        <li>Applications STI2D: communication, capteurs, telemetrie.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>4) Transmission de l'information</h2>
+      <ul>
+        <li>Codage de l'information sur un signal.</li>
+        <li>Compromis debit/portee/bruit.</li>
+        <li>Importance de la qualite du signal recu.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>5) Methode de resolution</h2>
+      <ol>
+        <li>Identifier les donnees (v, lambda, f).</li>
+        <li>Isoler la formule adaptee.</li>
+        <li>Verifier les unites avant calcul.</li>
+        <li>Conclure en lien avec le contexte technique.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Exercices corriges</h2>
+
+      <h3>Exercice 1 - Calcul de longueur d'onde</h3>
+      <p>Un signal sonore de frequence 680 Hz se propage a 340 m/s. Calculer lambda.</p>
+      <button class="toggle-answer" data-target="oi-c1">Afficher la correction</button>
+      <div id="oi-c1" class="answer hidden">lambda = v/f = 340/680 = 0,50 m.</div>
+
+      <h3>Exercice 2 - Frequence</h3>
+      <p>Une onde a v=3,0 m/s et lambda=0,60 m. Calculer f.</p>
+      <button class="toggle-answer" data-target="oi-c2">Afficher la correction</button>
+      <div id="oi-c2" class="answer hidden">f = v/lambda = 3,0/0,60 = 5,0 Hz.</div>
+
+      <h3>Exercice 3 - Type d'onde</h3>
+      <p>Le son se propage-t-il dans le vide ? Justifier.</p>
+      <button class="toggle-answer" data-target="oi-c3">Afficher la correction</button>
+      <div id="oi-c3" class="answer hidden">Non. Le son est une onde mecanique qui necessite un milieu materiel.</div>
+
+      <div class="interactive">
+        <h3>Exercices interactifs</h3>
+        <p><strong>Q1.</strong> v=20 m/s, f=4 Hz. lambda = ?</p>
+        <input id="oi-q1" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('oi-q1', 5, 'oi-f1')">Verifier</button>
+        <div id="oi-f1" class="feedback"></div>
+
+        <p><strong>Q2.</strong> lambda=2 m et f=10 Hz. v = ?</p>
+        <input id="oi-q2" type="text" placeholder="Ta reponse" />
+        <button class="toggle-answer" onclick="checkNumeric('oi-q2', 20, 'oi-f2')">Verifier</button>
+        <div id="oi-f2" class="feedback"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>LessonsSTI2D - Ondes et information</footer>
+
+  <script>
+    document.querySelectorAll('.toggle-answer[data-target]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var targetId = btn.getAttribute('data-target');
+        var block = document.getElementById(targetId);
+        var isHidden = block.classList.contains('hidden');
+        block.classList.toggle('hidden');
+        btn.textContent = isHidden ? 'Masquer la correction' : 'Afficher la correction';
+      });
+    });
+
+    function checkNumeric(inputId, expectedValue, feedbackId) {
+      var raw = document.getElementById(inputId).value.trim().replace(',', '.');
+      var user = Number(raw);
+      var feedback = document.getElementById(feedbackId);
+      if (raw === '' || Number.isNaN(user)) {
+        feedback.textContent = 'Entre un nombre valide.';
+        feedback.className = 'feedback ko';
+        return;
+      }
+      if (Math.abs(user - expectedValue) < 0.0001) {
+        feedback.textContent = 'Correct.';
+        feedback.className = 'feedback ok';
+      } else {
+        feedback.textContent = 'Incorrect. Essaie encore.';
+        feedback.className = 'feedback ko';
+      }
+    }
+  </script>
+</body>
+</html>
