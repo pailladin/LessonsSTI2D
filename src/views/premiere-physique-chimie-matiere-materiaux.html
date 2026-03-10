@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -15,6 +15,7 @@
         <a href="/">Accueil</a>
         <a href="/programme/premiere">Programme 1re</a>
         <a href="/programme/premiere/physique-chimie">Physique-Chimie</a>
+        <a href="/programme/premiere/physique-chimie/matiere-materiaux">Matiere et materiaux</a>
       </nav>
     </div>
   </header>
@@ -306,85 +307,321 @@
       </div>
       </section>
     </div>
-
     <div class="tab-panel hidden" id="panel-part-3" role="tabpanel" aria-labelledby="tab-part-3">
-      <section class="card">
-      <h2>1) Preparation des solutions</h2>
-      <ul>
-        <li>Concentration molaire: <strong>C = n / V</strong>.</li>
-        <li>Dissolution: preparer une solution a partir d'un solide.</li>
-        <li>Dilution: <strong>Cmere * Vpreleve = Cfille * Vfille</strong>.</li>
-        <li>Materiel: fiole jaugee, pipette jaugee, becher; protocole rigoureux.</li>
-      </ul>
+      <section class="card mm-course">        <p>
+          Les piles et les accumulateurs sont des convertisseurs electrochimiques qui permettent de transformer
+          l'energie chimique en energie electrique. Les piles et accumulateurs contiennent des especes polluantes
+          et toxiques que le recyclage permet de valoriser tout en protegeant l'environnement.
+        </p>
       </section>
 
-      <section class="card">
-      <h2>2) Oxydoreduction (base STI2D)</h2>
-      <ul>
-        <li>Oxydation: perte d'electrons.</li>
-        <li>Reduction: gain d'electrons.</li>
-        <li>Un oxydant capte des electrons; un reducteur cede des electrons.</li>
-      </ul>
+      <section class="card mm-course">
+        <h2><span class="mm-num">0</span> Rappel</h2>
+        <p><strong>Reaction d'oxydoreduction :</strong><br />
+          Une reaction d'oxydoreduction se definit comme le transfert d'un ou plusieurs electrons entre differentes especes chimiques.
+        </p>
+        <p><strong>Oxydation et reduction :</strong><br />
+          Un <strong>oxydant</strong> est une espece chimique capable de <strong>capter</strong> un ou plusieurs electrons. Il subit toujours une reduction.<br />
+          exemple : <strong>Zn<sup>2+</sup><sub>(aq)</sub> + 2 e<sup>-</sup> &rarr; Zn<sub>(s)</sub></strong><br />
+          Un <strong>reducteur</strong> est une espece chimique capable de <strong>ceder</strong> un ou plusieurs electrons. Il subit toujours une oxydation.<br />
+          exemple : <strong>Zn<sub>(s)</sub> &rarr; Zn<sup>2+</sup><sub>(aq)</sub> + 2 e<sup>-</sup></strong>
+        </p>
+        <p><strong>Un couple oxydant/reducteur</strong> est constitue d'un oxydant et d'un reducteur lies par une demi-equation.<br />
+          Chaque demi-equation electronique doit etre equilibree pour assurer la conservation de chaque element chimique et de la charge electrique.<br />
+          exemple : pour le couple Cl<sub>2(g)</sub> / Cl<sup>-</sup><sub>(aq)</sub>, on a la demi-equation :<br />
+          <strong>Cl<sub>2(g)</sub> + 2 e<sup>-</sup> &rarr; 2 Cl<sup>-</sup><sub>(aq)</sub></strong>
+        </p>
+        <p>
+          <strong>Reactions chimiques d'oxydoreduction :</strong><br />
+          Lorsqu'une reaction chimique d'oxydoreduction a lieu, il y a forcement deux couples oxydant/reducteur qui participent a cette reaction.
+          Un oxydant d'un couple va reagir avec le reducteur de l'autre couple.
+        </p>
+        <p>
+          <strong>Exercice complete :</strong> le chrome solide Cr<sub>(s)</sub> s'oxyde au contact de l'ion plomb Pb<sup>2+</sup><sub>(aq)</sub>.<br />
+          Les deux couples mis en jeu sont : Pb<sup>2+</sup><sub>(aq)</sub>/Pb<sub>(s)</sub> et Cr<sup>3+</sup><sub>(aq)</sub>/Cr<sub>(s)</sub>.
+        </p>
+        <ol>
+          <li>
+            Demi-equations des deux couples :<br />
+            <strong>Cr<sub>(s)</sub> &rarr; Cr<sup>3+</sup><sub>(aq)</sub> + 3 e<sup>-</sup></strong><br />
+            <strong>Pb<sup>2+</sup><sub>(aq)</sub> + 2 e<sup>-</sup> &rarr; Pb<sub>(s)</sub></strong>
+          </li>
+          <li>
+            Meme nombre d'electrons echanges (PPCM = 6) :<br />
+            <strong>2 Cr<sub>(s)</sub> &rarr; 2 Cr<sup>3+</sup><sub>(aq)</sub> + 6 e<sup>-</sup></strong><br />
+            <strong>3 Pb<sup>2+</sup><sub>(aq)</sub> + 6 e<sup>-</sup> &rarr; 3 Pb<sub>(s)</sub></strong>
+          </li>
+          <li>
+            Equation chimique finale :<br />
+            <strong>2 Cr<sub>(s)</sub> + 3 Pb<sup>2+</sup><sub>(aq)</sub> &rarr; 2 Cr<sup>3+</sup><sub>(aq)</sub> + 3 Pb<sub>(s)</sub></strong>
+          </li>
+        </ol>
       </section>
 
-      <section class="card">
-      <h2>3) Piles electrochimiques</h2>
-      <ul>
-        <li>Une pile convertit l'energie chimique en energie electrique.</li>
-        <li>Deux demi-piles + pont salin + circuit externe.</li>
-        <li>Le courant externe va du pole + vers le pole -, les electrons circulent en sens inverse.</li>
-        <li>La tension de pile depend des couples oxydant/reducteur utilises.</li>
-      </ul>
+      <section class="card mm-course">
+        <h2><span class="mm-num">1</span> Piles</h2>
+        <div class="mm-media-row">
+          <div>
+            <p>
+              Une pile en fonctionnement <strong>consomme ses reactifs</strong> jusqu'a leur epuisement.
+              Les piles ont donc une <strong>duree de vie limitee</strong>, liee a la quantite de reactifs
+              chimiques presents a l'interieur.
+            </p>
+            <p>Une pile est constituee :</p>
+            <ul>
+              <li>D'une electrode siege de l'oxydation (perte d'electrons) : l'<strong>ANODE</strong>, elle libere les electrons, c'est la borne <strong>-</strong>.</li>
+              <li>D'une electrode siege de la reduction (gain d'electrons) : la <strong>CATHODE</strong>, elle capte les electrons, c'est la borne <strong>+</strong>.</li>
+              <li>D'un pont salin qui assure le passage du courant a l'interieur de la pile. Les cations (ions +) se deplacent dans le sens du courant et les anions (ions -) dans le sens des electrons.</li>
+              <li>D'un circuit exterieur dans lequel les electrons se deplacent dans le sens oppose au courant electrique.</li>
+            </ul>
+            <p>
+              Une pile est donc le siege d'une reaction d'oxydo-reduction entre un
+              <strong>oxydant</strong> (espece qui gagne des electrons lors d'une reduction), place a la cathode,
+              et un <strong>reducteur</strong> (espece qui perd des electrons lors d'une oxydation), place a l'anode.
+            </p>
+          </div>
+          <figure class="mm-figure">
+            <img src="/static/images/matiere-materiaux/pile-daniell.png" alt="Exemple de pile Daniell cuivre zinc" />
+            <figcaption>Exemple de la pile Daniell (pile cuivre/zinc)</figcaption>
+          </figure>
+        </div>
       </section>
 
-      <section class="card">
-      <h2>4) Application technique</h2>
-      <ul>
-        <li>Choisir une pile/batterie selon tension, capacite, masse et securite.</li>
-        <li>Comparer piles primaires et accumulateurs rechargeables.</li>
-      </ul>
+      <section class="card mm-course">
+        <h2><span class="mm-num">2</span> Accumulateurs</h2>
+        <p>
+          Les accumulateurs mettent en jeu des reactions chimiques <strong>reversibles</strong>, c'est-a-dire
+          qui fonctionnent dans les deux sens. Un accumulateur a donc la capacite de reformer ses reactifs
+          lors de la recharge (reaction chimique forcee grace a un generateur).
+        </p>
       </section>
 
-      <section class="card">
-      <h3>Methode de resolution</h3>
-      <ol>
-        <li>Identifier le sous-theme: solution, redox ou pile.</li>
-        <li>Poser la relation adaptee (C=n/V, dilution, demi-equation, etc.).</li>
-        <li>Verifier les unites et le sens physique du resultat.</li>
-        <li>Conclure sur l'application technique (preparation, choix de pile, securite).</li>
-      </ol>
+      <section class="card mm-course">
+        <h2><span class="mm-num">3</span> Pile a combustible</h2>
+        <div class="mm-media-row">
+          <div>
+            <p>
+              Lors de son fonctionnement, une pile a combustible doit en permanence etre alimentee en reactifs.
+              Son principe repose alors sur l'oxydation d'un <strong>combustible</strong> (par exemple l'hydrogene)
+              et la reduction d'un <strong>comburant</strong> (par exemple le dioxygene) aboutissant a la production
+              simultanee d'eau, d'energie electrique et de chaleur.
+            </p>
+            <p>
+              Equation de la reaction chimique de fonctionnement de la pile :<br />
+              <strong>2H<sub>2(g)</sub> + O<sub>2(g)</sub> &rarr; 2H<sub>2</sub>O<sub>(l)</sub></strong>
+            </p>
+            <p>
+              <strong>Animation en video :</strong>
+              <a href="https://bit.ly/VIDanimpac" target="_blank" rel="noopener noreferrer">https://bit.ly/VIDanimpac</a>
+            </p>
+          </div>
+          <figure class="mm-figure">
+            <img src="/static/images/matiere-materiaux/pile-combustible.png" alt="Schema de fonctionnement d'une pile a combustible" />
+          </figure>
+        </div>
       </section>
 
-      <section class="card">
-      <h3>Exercices corriges</h3>
-      <h4>Exercice 1 - Dilution</h4>
-      <p>On veut preparer 100 mL d'une solution a 0,20 mol/L a partir d'une solution mere a 1,0 mol/L. Quel volume de solution mere faut-il prelever ?</p>
-      <button class="toggle-answer" data-target="mm3-c1">Afficher la correction</button>
-      <div id="mm3-c1" class="answer hidden">
-        Cmere*Vpreleve = Cfille*Vfille donc Vpreleve = (0,20*100)/1,0 = 20 mL.
-      </div>
+      <section class="card mm-course">
+        <h2><span class="mm-num">4</span> Caracteristiques des piles et accumulateurs</h2>
+        <table class="mm-table">
+          <thead>
+            <tr>
+              <th>Grandeur</th>
+              <th>Symbole</th>
+              <th>Unite</th>
+              <th>Relation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tension nominale (= tension en fonctionnement)</td>
+              <td>U</td>
+              <td>en volt V</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Duree de charge ou decharge</td>
+              <td>&Delta;t</td>
+              <td>en seconde s<br />en heure h</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Intensite du courant</td>
+              <td>I</td>
+              <td>en ampere A</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Quantite de matiere d'electrons echanges</td>
+              <td>n<sub>e-</sub></td>
+              <td>en mol</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><strong>Capacite</strong><br />= quantite d'electricite disponible</td>
+              <td>Q</td>
+              <td>en coulomb C (=A.s)<br />en ampere-heure A.h<br /><strong>1 A.h = 3600 C</strong></td>
+              <td>
+                <strong>Q = I x &Delta;t</strong><br />
+                <strong>Q = n<sub>e-</sub> x F</strong><br />
+                F : constante de Faraday (= charge en coulombs d'une mole d'electrons)<br />
+                F = N<sub>A</sub> x e = 96,5.10<sup>3</sup> C.mol<sup>-1</sup>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Energie disponible</strong></td>
+              <td>W (ou E)</td>
+              <td>en joule J<br />en wattheure W.h<br />1 W.h = 3600 J</td>
+              <td><strong>W = Q x U</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Densite energetique</strong></td>
+              <td></td>
+              <td>en W.h.kg<sup>-1</sup> ou en W.h.L<sup>-1</sup></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-      <h4>Exercice 2 - Oxydoreduction</h4>
-      <p>Dans la demi-equation Fe2+ -> Fe3+ + e-, l'espece Fe2+ est-elle oxydant ou reducteur ?</p>
-      <button class="toggle-answer" data-target="mm3-c2">Afficher la correction</button>
-      <div id="mm3-c2" class="answer hidden">
-        Fe2+ perd un electron: c'est une oxydation. Fe2+ joue donc le role de reducteur.
-      </div>
+      <section class="card mm-course">
+        <h2><span class="mm-num">5</span> Exploiter les equations d'une reaction d'oxydo-reduction pour realiser un bilan de matiere</h2>
+        <p>
+          <strong>Hypothese :</strong> on connait la masse de l'un du reactif limitant ou la concentration
+          et le volume du reactif limitant.<br />
+          <strong>Objectif :</strong> chercher la capacite Q de la pile (ou sa duree de fonctionnement).
+        </p>
+        <ul>
+          <li>On determine la quantite de matiere du reactif limitant en utilisant <strong>n = m / M</strong> ou <strong>n = c x V</strong>.</li>
+          <li>A partir de la demi-equation dans lequel le reactif limitant intervient et de sa quantite de matiere n, on en deduit la quantite de matiere d'electrons echanges en mol n<sub>e-</sub> (par simple proportionnalite).</li>
+          <li><em>Exemple :</em> si Zn est le reactif limitant et la demi-equation ecrite est : <strong>Zn = Zn<sup>2+</sup> + 2e-</strong><br />alors 1 mol de Zn produit 2 mol d'e-<br />donc n mol de Zn produit n<sub>e-</sub> mol d'e-<br />ainsi : <strong>n<sub>e-</sub> = 2 x n</strong></li>
+          <li>On determine la capacite : <strong>Q = n<sub>e-</sub> x F</strong> (attention Q est en C).</li>
+          <li>Si besoin, on en deduit la duree de fonctionnement de la pile : <strong>&Delta;t = Q / I</strong>.</li>
+          <li>Si besoin, on en deduit l'energie stockee : <strong>W = Q x U</strong>.</li>
+        </ul>
 
-      <h4>Exercice 3 - Pile</h4>
-      <p>Une pile alimente une LED. Quelle forme d'energie est convertie dans la pile ?</p>
-      <button class="toggle-answer" data-target="mm3-c3">Afficher la correction</button>
-      <div id="mm3-c3" class="answer hidden">
-        La pile convertit l'energie chimique en energie electrique.
-      </div>
+        <p>
+          <strong>Hypothese :</strong> on connait la capacite Q de la pile.<br />
+          <strong>Objectif :</strong> chercher la masse de l'electrode correspondant au reactif limitant.
+        </p>
+        <ul>
+          <li>On determine la quantite de matiere d'electrons echanges en mol : <strong>n<sub>e-</sub> = Q / F</strong> (attention Q doit etre en C).</li>
+          <li>A partir de la demi-equation dans lequel le reactif limitant intervient et de n<sub>e-</sub>, on en deduit la quantite de matiere du reactif limitant n (par simple proportionnalite).</li>
+          <li><em>Exemple :</em> si Zn est le reactif limitant et la demi-equation ecrite est : <strong>Zn = Zn<sup>2+</sup> + 2e-</strong><br />alors 1 mol de Zn produit 2 mol d'e-<br />donc n mol de Zn produit n<sub>e-</sub> mol d'e-<br />ainsi : <strong>n = n<sub>e-</sub> / 2</strong></li>
+          <li>On en deduit la masse du reactif limitant qui a reagit en utilisant : <strong>m = n x M</strong>.</li>
+        </ul>
+      </section>
 
-      <div class="interactive">
-        <h4>Exercice interactif</h4>
-        <p><strong>Q1.</strong> Pour une dilution: Cmere = 2,0 mol/L, Cfille = 0,5 mol/L, Vfille = 100 mL. Vpreleve = ? (mL)</p>
-        <input id="mm3-q1" type="text" placeholder="Ta reponse" />
-        <button class="toggle-answer" onclick="checkNumeric('mm3-q1', 25, 'mm3-f1')">Verifier</button>
-        <div id="mm3-f1" class="feedback"></div>
-      </div>
+      <section class="card mm-course">
+        <h2>Exercices</h2>
+
+        <h3>Exercice 1 - Pile saline</h3>
+        <p><strong>Donnees :</strong> constante de Faraday : F = 9,65.10<sup>4</sup> C.mol<sup>-1</sup> ; masse molaire M(Zn) = 65,4 g.mol<sup>-1</sup> ; 1 A.h = 3600 C.</p>
+        <p>
+          Une pile saline est schematisee ci-contre. Les couples oxydant/reducteur mis en jeu dans la reaction chimique
+          sont : MnO<sub>2(s)</sub>/MnO(OH)<sub>(s)</sub> et Zn<sup>2+</sup><sub>(aq)</sub>/Zn<sub>(s)</sub>.
+        </p>
+        <ol>
+          <li>Pour chaque couple, indiquer l'oxydant et le reducteur.</li>
+          <li>Ecrire les demi-equations d'oxydoreduction aux electrodes.</li>
+          <li>Ecrire l'equation de la reaction globale.</li>
+          <li>Determiner la quantite de matiere d'electrons echanges.</li>
+          <li>A partir d'un bilan de matiere, en deduire la masse minimale de zinc.</li>
+          <li>Calculer l'energie disponible dans la pile.</li>
+          <li>La densite energetique donnee par le fabricant est-elle juste ?</li>
+        </ol>
+        <p>Sa capacite vaut 800 mA.h, sa tension 1,5 V et sa masse 20 g. Le fabricant annonce une densite energetique de 70 W.h.kg<sup>-1</sup>.</p>
+        <button class="toggle-answer" data-target="mm3-ex2-corr">Afficher la correction</button>
+        <div id="mm3-ex2-corr" class="answer hidden">
+          <p><strong>1) Oxydant / reducteur :</strong><br />
+            Couple MnO<sub>2</sub>/MnO(OH) : oxydant = MnO<sub>2</sub>, reducteur = MnO(OH).<br />
+            Couple Zn<sup>2+</sup>/Zn : oxydant = Zn<sup>2+</sup>, reducteur = Zn.
+          </p>
+          <p><strong>2) Demi-equations :</strong><br />
+            Anode (oxydation) : Zn<sub>(s)</sub> &rarr; Zn<sup>2+</sup><sub>(aq)</sub> + 2 e<sup>-</sup><br />
+            Cathode (reduction) : MnO<sub>2(s)</sub> + H<sup>+</sup><sub>(aq)</sub> + e<sup>-</sup> &rarr; MnO(OH)<sub>(s)</sub>
+          </p>
+          <p><strong>3) Equation globale :</strong><br />
+            Zn<sub>(s)</sub> + 2 MnO<sub>2(s)</sub> + 2 H<sup>+</sup><sub>(aq)</sub> &rarr; Zn<sup>2+</sup><sub>(aq)</sub> + 2 MnO(OH)<sub>(s)</sub>
+          </p>
+          <p><strong>4) Quantite d'electrons :</strong><br />
+            Q = 800 mA.h = 0,8 A.h = 0,8 x 3600 = 2880 C<br />
+            n<sub>e-</sub> = Q/F = 2880 / (9,65.10<sup>4</sup>) = 2,98.10<sup>-2</sup> mol
+          </p>
+          <p><strong>5) Masse minimale de zinc :</strong><br />
+            Zn &rarr; Zn<sup>2+</sup> + 2 e<sup>-</sup> donc n(Zn) = n<sub>e-</sub>/2 = 1,49.10<sup>-2</sup> mol<br />
+            m(Zn) = n x M = 1,49.10<sup>-2</sup> x 65,4 = 0,97 g
+          </p>
+          <p><strong>6) Energie disponible :</strong><br />
+            W = Q x U = 2880 x 1,5 = 4320 J = 1,2 W.h
+          </p>
+          <p><strong>7) Densite energetique :</strong><br />
+            D = 1,2 / 0,020 = 60 W.h.kg<sup>-1</sup><br />
+            Valeur annoncee 70 W.h.kg<sup>-1</sup> : <strong>non</strong>, elle est superieure a la valeur calculee.
+          </p>
+        </div>
+
+        <h3>Exercice 2 - Pile zinc-air</h3>
+        <p><strong>Donnees :</strong> constante de Faraday : F = 9,65.10<sup>4</sup> C.mol<sup>-1</sup> ; masse molaire M(Zn) = 65,4 g.mol<sup>-1</sup> ; 1 A.h = 3600 C.</p>
+        <p>
+          Une pile zinc-air 12PR41 possede : U = 1,45 V ; capacite = 180 mA.h ; masse = 0,58 g ;
+          intensite du courant appele = 1,5 mA.
+        </p>
+        <p>
+          Demi-equations :<br />
+          Zn<sub>(s)</sub> + 2 HO<sup>-</sup><sub>(aq)</sub> &rarr; ZnO<sub>(s)</sub> + H<sub>2</sub>O<sub>(l)</sub> + 2 e<sup>-</sup><br />
+          O<sub>2(g)</sub> + 4 e<sup>-</sup> + 2 H<sub>2</sub>O<sub>(l)</sub> &rarr; 4 HO<sup>-</sup><sub>(aq)</sub>
+        </p>
+        <ol>
+          <li>Expliquer pourquoi les piles zinc-air sont bon marche.</li>
+          <li>Determiner les deux couples oxydant/reducteur mis en jeu.</li>
+          <li>Ecrire l'equation de la reaction chimique.</li>
+          <li>Calculer le nombre de moles d'electrons disponibles.</li>
+          <li>Calculer la masse de zinc contenue dans la pile zinc-air.</li>
+          <li>Utilisation 10 h/jour : en combien de jours la pile est-elle dechargee ?</li>
+          <li>Calculer l'energie contenue et en deduire l'energie massique.</li>
+        </ol>
+        <button class="toggle-answer" data-target="mm3-ex3-corr">Afficher la correction</button>
+        <div id="mm3-ex3-corr" class="answer hidden">
+          <p><strong>1)</strong> Elles sont economiques car le zinc est un metal abondant et l'oxydant est le dioxygene de l'air (gratuit, non stocke dans la pile).</p>
+          <p><strong>2)</strong> Couples : ZnO<sub>(s)</sub>/Zn<sub>(s)</sub> et O<sub>2(g)</sub>/HO<sup>-</sup><sub>(aq)</sub>.</p>
+          <p><strong>3)</strong> Equation globale :<br />
+            2 Zn<sub>(s)</sub> + O<sub>2(g)</sub> &rarr; 2 ZnO<sub>(s)</sub>
+          </p>
+          <p><strong>4)</strong> Q = 180 mA.h = 0,180 A.h = 648 C<br />
+            n<sub>e-</sub> = Q/F = 648 / (9,65.10<sup>4</sup>) = 6,72.10<sup>-3</sup> mol
+          </p>
+          <p><strong>5)</strong> n(Zn) = n<sub>e-</sub>/2 = 3,36.10<sup>-3</sup> mol<br />
+            m(Zn) = n x M = 3,36.10<sup>-3</sup> x 65,4 = 0,220 g
+          </p>
+          <p><strong>6)</strong> Capacite 180 mA.h ; consommation/jour = 1,5 x 10 = 15 mA.h<br />
+            Duree = 180 / 15 = 12 jours
+          </p>
+          <p><strong>7)</strong> Energie : W = Q x U = 648 x 1,45 = 939,6 J = 0,261 W.h<br />
+            Energie massique = 0,261 / 0,00058 = 450 W.h.kg<sup>-1</sup>
+          </p>
+        </div>
+
+        <h3>Exercices supplementaires (saisie)</h3>
+        <p><strong>Donnees :</strong> constante de Faraday : F = 9,65.10<sup>4</sup> C.mol<sup>-1</sup> ; masse molaire M(Zn) = 65,4 g.mol<sup>-1</sup> ; 1 A.h = 3600 C.</p>
+
+        <div class="interactive">
+          <p><strong>Exercice 3.</strong> Une pile a une capacite de 500 mA.h. Calculer la charge Q en coulombs.</p>
+          <input id="mm3-q2" type="text" placeholder="Q en C" />
+          <button class="toggle-answer" onclick="checkNumeric('mm3-q2', 1800, 'mm3-f2')">Verifier</button>
+          <div id="mm3-f2" class="feedback"></div>
+          <button class="toggle-answer" data-target="mm3-c4">Afficher la methode</button>
+          <div id="mm3-c4" class="answer hidden">Q = 0,5 x 3600 = 1800 C.</div>
+        </div>
+
+        <div class="interactive">
+          <p><strong>Exercice 4.</strong> Une pile fournit Q = 965 C. Calculer la quantite de matiere d'electrons n<sub>e-</sub> (en mol).</p>
+          <input id="mm3-q3" type="text" placeholder="n(e-) en mol" />
+          <button class="toggle-answer" onclick="checkNumeric('mm3-q3', 0.01, 'mm3-f3')">Verifier</button>
+          <div id="mm3-f3" class="feedback"></div>
+          <button class="toggle-answer" data-target="mm3-c5">Afficher la methode</button>
+          <div id="mm3-c5" class="answer hidden">n<sub>e-</sub> = Q/F = 965 / (9,65 x 10<sup>4</sup>) = 1,0 x 10<sup>-2</sup> mol = 0.01 mol.</div>
+        </div>
       </section>
     </div>
   </main>
@@ -416,19 +653,57 @@
 
     window.addEventListener('load', renderCh2o2);
 
+        function activateTab(targetId, syncUrl) {
+      if (!targetId) return;
+
+      var button = document.querySelector('.tab-btn[data-tab-target="' + targetId + '"]');
+      if (!button) return;
+
+      document.querySelectorAll('.tab-btn').forEach(function (otherBtn) {
+        otherBtn.setAttribute('aria-selected', otherBtn === button ? 'true' : 'false');
+      });
+
+      document.querySelectorAll('.tab-panel').forEach(function (panel) {
+        panel.classList.toggle('hidden', panel.id !== targetId);
+      });
+
+      if (syncUrl) {
+        history.replaceState(null, '', '#' + targetId);
+      }
+    }
+
+    function getTabIdFromUrl() {
+      var params = new URLSearchParams(window.location.search);
+      var chap = params.get('chap') || params.get('chapter') || params.get('part');
+      if (chap === '1') return 'panel-part-1';
+      if (chap === '2') return 'panel-part-2';
+      if (chap === '3') return 'panel-part-3';
+
+      var hash = (window.location.hash || '').replace('#', '').trim();
+      if (!hash) return null;
+      if (hash === 'part-1' || hash === 'chap-1') return 'panel-part-1';
+      if (hash === 'part-2' || hash === 'chap-2') return 'panel-part-2';
+      if (hash === 'part-3' || hash === 'chap-3') return 'panel-part-3';
+      if (hash === 'panel-part-1' || hash === 'panel-part-2' || hash === 'panel-part-3') return hash;
+
+      return null;
+    }
+
     document.querySelectorAll('.tab-btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var targetId = btn.getAttribute('data-tab-target');
-        if (!targetId) return;
-
-        document.querySelectorAll('.tab-btn').forEach(function (otherBtn) {
-          otherBtn.setAttribute('aria-selected', otherBtn === btn ? 'true' : 'false');
-        });
-
-        document.querySelectorAll('.tab-panel').forEach(function (panel) {
-          panel.classList.toggle('hidden', panel.id !== targetId);
-        });
+        activateTab(targetId, true);
       });
+    });
+
+    var tabFromUrl = getTabIdFromUrl();
+    if (tabFromUrl) {
+      activateTab(tabFromUrl, false);
+    }
+
+    window.addEventListener('hashchange', function () {
+      var id = getTabIdFromUrl();
+      if (id) activateTab(id, false);
     });
 
     document.querySelectorAll('.toggle-answer[data-target]').forEach(function (btn) {
@@ -461,3 +736,16 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

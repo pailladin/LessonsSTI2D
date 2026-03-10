@@ -380,3 +380,100 @@ footer {
     align-items: flex-start;
   }
 }
+.mm-course {
+  border-color: #cfd6de;
+}
+
+.mm-course-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2.2fr 0.8fr;
+  border: 2px solid #777;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 0.9rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.mm-course-head > div {
+  border-right: 2px solid #777;
+  background: #d9d9d9;
+  padding: 0.5rem 0.4rem;
+  text-align: center;
+}
+
+.mm-course-head > div:last-child {
+  border-right: none;
+}
+
+.mm-course h2 {
+  margin-top: 0;
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.mm-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 2px solid #111;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.mm-media-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.mm-figure {
+  margin: 0;
+}
+
+.mm-figure img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.mm-figure figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #344054;
+}
+
+.mm-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.96rem;
+}
+
+.mm-table th,
+.mm-table td {
+  border: 1.5px solid #222;
+  padding: 0.5rem;
+  vertical-align: top;
+}
+
+.mm-table th {
+  background: #f0f0f0;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .mm-course-head {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mm-media-row {
+    grid-template-columns: 1fr;
+  }
+}
